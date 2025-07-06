@@ -1,0 +1,57 @@
+Replit, por favor, implemente as seguintes melhorias no sistema atual do painel administrativo existente:
+
+📌 OBJETIVO:
+Expandir o painel do vereador para permitir que **todo o conteúdo do site público** seja **editável, gerenciado e atualizado** pelo administrador. Nenhuma parte do site (do topo ao rodapé) deve depender de alterações manuais em código.
+
+---
+
+🛠 FUNÇÕES A ACRESCENTAR AO PAINEL /admin:
+
+1. **Gestão de Conteúdo Global (novo módulo):**
+   - Criar uma seção “Editar Conteúdo do Site”.
+   - Exibir campos editáveis para:
+     - Cabeçalho (título, subtítulo, botões)
+     - Rodapé (texto institucional, contatos, redes sociais)
+     - Texto da seção "Mandato"
+     - Destaques na home (ex: números, slogans, frases)
+   - Armazenar alterações em banco de dados (`JSON`, `DB`, ou `localStorage`) e aplicar no site dinâmico via `fetch()` ou `templating`.
+
+2. **CRUD Completo para seções dinâmicas:**
+   - Adicionar módulos no painel para:
+     - Projetos
+     - Notícias
+     - Cursos Comunitários
+     - Galeria de Fotos e Vídeos
+   - Cada módulo deve permitir:
+     - Adicionar novo conteúdo
+     - Editar registros existentes
+     - Excluir itens
+
+3. **Upload de Mídia com Preview:**
+   - Permitir upload de imagens (jpg/png/webp) com pré-visualização.
+   - Permitir inserção de vídeos (via embed YouTube ou upload local).
+   - Vincular imagens/vídeos aos registros criados.
+
+4. **Editor de Texto Rico (WYSIWYG):**
+   - Integrar editor como `Quill.js`, `CKEditor` ou `TinyMCE` nas áreas de texto para formatação rica (negrito, título, listas, links etc.).
+
+5. **Sincronização Automática com o Site Público:**
+   - As alterações feitas devem refletir automaticamente no site, sem necessidade de deploy manual.
+   - Implementar com JavaScript dinâmico ou gerar páginas HTML com conteúdo atualizado do banco.
+
+6. **Organização e Segurança:**
+   - Manter tudo dentro do painel existente, respeitando o login do administrador.
+   - Validar campos e fornecer feedback visual ao salvar.
+
+---
+
+🎯 EXEMPLO DE ROTAS E NOMES:
+- `/admin/conteudo-site` → Editar textos principais
+- `/admin/projetos` → Gerenciar Projetos
+- `/admin/noticias` → Gerenciar Notícias
+- `/admin/galeria` → Gerenciar Mídias
+
+---
+
+✅ Resultado esperado:
+- O administrador pode **editar qualquer parte do site diretamente pelo painel**, sem tocar no código, com visualização instantânea.

@@ -1,0 +1,40 @@
+Atualize o projeto atual para adicionar as seguintes funcionalidades no painel do vereador:
+
+1. **Gráfico de Progresso (Termômetro de Envolvimento):**
+   - Na tela inicial do painel, adicione um gráfico de barras horizontais chamado "Termômetro de Envolvimento"
+   - Categorias: Não trabalhado, Em prospecção, Conquistado, Perdido
+   - Cada barra deve representar a quantidade de eleitores em cada status
+   - Use a biblioteca Chart.js
+   - Os dados devem ser carregados dinamicamente a partir do banco de dados ou JSON simulado
+
+2. **Filtro de Aniversariantes:**
+   - Crie uma nova aba no menu chamada "Aniversariantes"
+   - Mostre um formulário com campos "Data de início" e "Data de fim"
+   - Ao clicar em "Filtrar", exibir tabela com os eleitores aniversariantes nesse período com nome, cidade, telefone e data de nascimento
+   - Adicione botão "Imprimir lista" no topo da tabela
+   - Use DataTables.js para ordenação e busca
+
+3. **Mapa com Geolocalização dos Eleitores:**
+   - Crie uma aba chamada "Mapa de Eleitores"
+   - Exiba um mapa usando a biblioteca Leaflet.js com tiles do OpenStreetMap
+   - Para cada eleitor com endereço (bairro, cidade), geocodifique o local com a API do OpenCage Geocoder (gratuita) e marque no mapa
+   - Ao clicar em cada ponto, exiba tooltip com nome e telefone
+   - O mapa deve ser responsivo e de fácil navegação
+
+4. **Relatórios e Exportações:**
+   - Crie uma aba chamada "Relatórios"
+   - Adicione 2 botões:
+     - "Gerar Excel": exporta a lista completa de eleitores com seus dados usando a biblioteca SheetJS (xlsx)
+     - "Gerar PDF": gera relatório em PDF com layout profissional contendo:
+       - Total de eleitores cadastrados
+       - Quantos fazem aniversário neste mês
+       - Gráfico de envolvimento (termômetro)
+       - Lista de atendimentos recentes
+     - Use jsPDF para o PDF
+
+5. **Design e Integração:**
+   - Organize tudo no painel lateral do administrador com ícones e responsividade total
+   - Use cores e fontes modernas (estilo dashboard administrativo)
+   - Inclua carregamento com spinner ao filtrar aniversariantes e gerar relatórios
+
+Certifique-se que todas as bibliotecas estejam importadas corretamente no HTML ou script do projeto.

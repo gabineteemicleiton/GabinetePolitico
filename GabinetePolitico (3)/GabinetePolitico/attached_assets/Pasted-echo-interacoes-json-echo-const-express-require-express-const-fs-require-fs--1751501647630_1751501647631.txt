@@ -1,0 +1,73 @@
+echo "[]" > interacoes.json && \
+echo "const express = require('express');
+const fs = require('fs').promises;
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+app.use(express.static('.'));
+
+const FILE = 'interacoes.json';
+
+app.post('/api/interacoes', async (req, res) => {
+  try {
+    const nova = req.body;
+    const dados = await fs.readFile(FILE, 'utf8');
+    const lista = JSON.parse(dados);
+    lista.push(nova);
+    await fs.writeFile(FILE, JSON.stringify(lista, null, 2));
+    res.status(200).json({ ok: true });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao salvar interação' });
+  }
+});
+
+app.get('/api/interacoes', async (req, res) => {
+  try {
+    const dados = await fs.readFile(FILE, 'utf8');
+    res.status(200).json(JSON.parse(dados));
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ erro: 'Erro ao ler interações' });
+  }
+});
+
+app.listen(PORT, () => console.log(\`Servidor iniciado na porta \${PORT}\`));
+" > replit-api.js && \
+echo "<!DOCTYPE html>
+<html lang='pt-BR'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Enviar Sugestão</title>
+</head>
+<body>
+  <h2>Envie sua Sugestão</h2>
+  <form id='formSugestao'>
+    <input type='text' id='descricao' placeholder='Digite sua sugestão' required />
+    <button type='submit'>Enviar</button>
+  </form>
+  <p id='msg'></p>
+  <script>
+    document.getElementById('formSugestao').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const descricao = document.getElementById('descricao').value;
+      const dados = {
+        tipo: 'Sugestão',
+        descricao,
+        protocolo: 'PROTO-' + Math.floor(Math.random() * 10000),
+        data: new Date().toISOString()
+      };
+      const res = await fetch('/api/interacoes', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
+      document.getElementById('msg').innerText = res.ok ? 'Sugestão enviada!' : 'Erro ao enviar.';
+    });
+  </script>
+</body>
+</html>
+" > sugestao.html && \
+echo "web: node replit-api.js" > .replit && \
+npm install express

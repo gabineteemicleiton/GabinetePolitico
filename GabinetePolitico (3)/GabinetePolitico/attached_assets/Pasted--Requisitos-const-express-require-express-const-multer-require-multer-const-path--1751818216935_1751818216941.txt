@@ -1,0 +1,68 @@
+// Requisitos
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const emailjs = require('@emailjs/nodejs');
+const cors = require('cors');
+
+const app = express();
+const port = 3000;
+
+// Inicializa EmailJS
+emailjs.init('ypFrla8Fz7VXnlRPY'); // Public Key do EmailJS
+
+// Configurações
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Pasta pública para imagens
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Configuração do multer para upload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => cb(null, 'uploads/'),
+  filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
+});
+const upload = multer({ storage: storage });
+
+// Rota de envio do formulário com upload
+app.post('/enviar', upload.single('imagem'), async (req, res) => {
+  const dados = req.body;
+  const imagem = req.file ? `/uploads/${req.file.filename}` : 'Sem imagem';
+
+  // Envia e-mail com EmailJS
+  try {
+    await emailjs.send('service_oaoj2xm', 'template_sugestao', {
+      nome: dados.nome || 'Não informado',
+      email: dados.email || 'Não informado',
+      telefone: dados.telefone || 'Não informado',
+      bairro: dados.bairro || 'Não informado',
+      local: dados.local || 'Não informado',
+      mensagem: dados.mensagem || 'Sem mensagem',
+      imagem: imagem
+    });
+
+    // Retorno de sucesso
+    res.send(`
+      <h2>Sugestão enviada com sucesso!</h2>
+      <p><strong>Nome:</strong> ${dados.nome}</p>
+      <p><strong>Email:</strong> ${dados.email}</p>
+      <p><strong>Telefone:</strong> ${dados.telefone}</p>
+      <p><strong>Bairro:</strong> ${dados.bairro}</p>
+      <p><strong>Local:</strong> ${dados.local}</p>
+      <p><strong>Mensagem:</strong> ${dados.mensagem}</p>
+      <p><strong>Imagem enviada:</strong><br>
+        ${req.file ? `<img src="${imagem}" width="300">` : 'Nenhuma imagem enviada'}
+      </p>
+    `);
+  } catch (err) {
+    console.error('Erro ao enviar:', err);
+    res.status(500).send('Erro ao enviar sugestão.');
+  }
+});
+
+// Inicia o servidor
+app.listen(port, () => {
+  console.log(`Servidor online: http://localhost:${port}`);
+});

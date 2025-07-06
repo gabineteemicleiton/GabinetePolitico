@@ -1,0 +1,61 @@
+Crie uma aplicação web com as seguintes funcionalidades:
+
+1. Tela de Login exclusiva para o vereador:
+   - Campos: e-mail, senha
+   - Botão "Entrar"
+   - Link "Esqueci minha senha"
+   - Autenticação simples com usuário padrão (admin@gabinete.com / 123456)
+   - Após login, redirecionar para o painel administrativo do vereador
+
+2. Tela de Cadastro de Eleitores:
+   - Acessível por URL separada (ex: /cadastro.html)
+   - Campos:
+     - Nome completo (obrigatório)
+     - Telefone (obrigatório)
+     - Bairro (obrigatório)
+     - Cidade (obrigatório)
+     - Data de nascimento (obrigatório)
+     - Gênero (obrigatório)
+     - CPF (opcional)
+     - Zona eleitoral (opcional)
+     - Seção (opcional)
+   - Botão "Cadastrar"
+   - Armazenar dados localmente (JSON ou Replit DB)
+
+3. Painel Administrativo do Vereador (painel.html):
+   - Sidebar com abas:
+     - "Início" (resumo com número de eleitores, aniversariantes do dia, atendimentos hoje)
+     - "Cadastro de Eleitores" (ver e buscar eleitores)
+     - "Comunicação"
+     - "Relatórios"
+     - "Georreferenciamento"
+   - Layout moderno, estilo Gabinete Online (cores azul e branco)
+   - Ícones e animações leves
+   - Design responsivo (funciona em celular e PC)
+
+4. Banco de dados local:
+   - Usar Replit DB ou JSON para armazenar os dados dos eleitores
+   - Função de busca por nome/telefone/bairro no painel do vereador
+
+5. Estrutura de arquivos:
+   - `index.html` (página inicial)
+   - `login.html` (login do vereador)
+   - `cadastro.html` (cadastro dos eleitores)
+   - `painel.html` (painel administrativo)
+   - `style.css` (estilo)
+   - `script.js` (lógica)
+   - `database.json` (dados simulados dos eleitores)
+
+6. Ao finalizar, mostre a mensagem:
+   "✅ Sistema inicial pronto! Verifique as telas e funcionalidades."
+
+Estilo visual:
+- Layout clean e moderno como https://gabineteonline.com.br
+- Paleta azul e branco
+- Sidebar moderna com ícones
+- Animações leves de transição
+- Compatível com dispositivos móveis
+
+Este projeto é um sistema de gestão de mandato para vereador com foco em organização de eleitores e comunicação com a base.
+
+Agora crie esse sistema no ambiente do Replit.

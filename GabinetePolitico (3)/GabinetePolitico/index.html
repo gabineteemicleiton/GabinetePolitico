@@ -1,0 +1,1656 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Gabinete Digital - Emicleiton Rubem da Conceição</title>
+        <meta
+            name="description"
+            content="Gabinete Digital do Vereador Emicleiton Rubem da Conceição - Monte Santo, BA. Acompanhe projetos, agenda pública e entre em contato com nosso mandato."
+        />
+        <meta
+            name="keywords"
+            content="vereador, Monte Santo, Bahia, política, gabinete digital, Emicleiton, câmara municipal, projetos sociais, saúde, educação, infraestrutura"
+        />
+        <meta name="author" content="Gabinete Digital - Emicleiton" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="Portuguese" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
+
+        <!-- Open Graph Meta Tags -->
+        <meta
+            property="og:title"
+            content="Gabinete Digital - Vereador Emicleiton Rubem da Conceição"
+        />
+        <meta
+            property="og:description"
+            content="Acompanhe o trabalho do Vereador Emicleiton Rubem da Conceição em Monte Santo, BA. Projetos, agenda pública e canal direto de comunicação com a população."
+        />
+        <meta
+            property="og:image"
+            content="https://via.placeholder.com/1200x630/1e40af/ffffff?text=Gabinete+Digital+Emicleiton"
+        />
+        <meta
+            property="og:url"
+            content="https://gabinete-digital-emicleiton.replit.app"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:site_name" content="Gabinete Digital - Emicleiton" />
+
+        <!-- Twitter Card Meta Tags -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="Gabinete Digital - Vereador Emicleiton"
+        />
+        <meta
+            name="twitter:description"
+            content="Acompanhe o trabalho do Vereador Emicleiton Rubem da Conceição em Monte Santo, BA"
+        />
+        <meta
+            name="twitter:image"
+            content="https://via.placeholder.com/1200x630/1e40af/ffffff?text=Gabinete+Digital+Emicleiton"
+        />
+        <meta name="twitter:site" content="@emicleiton_vereador" />
+
+        <!-- Additional SEO Meta Tags -->
+        <meta name="geo.region" content="BR-BA" />
+        <meta name="geo.placename" content="Monte Santo, Bahia" />
+        <meta name="geo.position" content="-10.4372;-39.3339" />
+        <meta name="ICBM" content="-10.4372, -39.3339" />
+
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link 
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" 
+            rel="stylesheet"
+        />
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+    </head>
+    <body>
+
+        
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="logo-section">
+                        <img
+                            src="logo.png"
+                            alt="Logo Gabinete Digital"
+                            class="logo"
+                        />
+                        <div class="brand-text">
+                            <h1>Gabinete Digital</h1>
+                            <p>Emicleiton Rubem da Conceição</p>
+                            <span class="subtitle"
+                                >Vereador de Monte Santo - BA</span
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" onclick="toggleMobileMenu()">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay" onclick="toggleMobileMenu()"></div>
+        
+        <!-- Mobile Menu Sidebar -->
+        <div class="mobile-menu-sidebar" id="mobileMenuSidebar">
+            <div class="mobile-menu-header">
+                <div class="mobile-menu-logo">
+                    <img src="logo.png" alt="Logo" class="mobile-logo">
+                    <span>Gabinete Digital</span>
+                </div>
+                <button class="mobile-menu-close" id="mobileMenuClose" onclick="toggleMobileMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li>
+                        <button class="mobile-nav-button" data-section="mandato">
+                            <i class="fas fa-trophy"></i>
+                            <span>Mandato Atual</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="biografia">
+                            <i class="fas fa-user"></i>
+                            <span>Biografia</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="projetos">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Projetos</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="agenda">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>Agenda Pública</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="news">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Notícias</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="galeria">
+                            <i class="fas fa-images"></i>
+                            <span>Galeria</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="cursos">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Cursos Comunitários</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="contato">
+                            <i class="fas fa-comments"></i>
+                            <span>Contato</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="mobile-nav-button" data-section="localizacao">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Localização</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-footer">
+                <p>© 2025 Gabinete Digital</p>
+                <p>Emicleiton Rubem da Conceição</p>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <div class="foto-vereador">
+                            <img src="vereador.png" alt="Vereador Emicleiton Rubem">
+                        </div>
+                    </div>
+                    <div class="hero-text">
+                        <h2 class="vereador-nome">Emicleiton Rubem da Conceição</h2>
+                        <h2>Vereador de Monte Santo - Bahia</h2>
+                        <p>"Trabalhando com transparência e dedicação pelo futuro da nossa cidade"</p>
+                        <div class="hero-actions">
+                            <button class="hero-button primary" onclick="window.open('https://wa.me/557499999999', '_blank')">
+                                <i class='fab fa-whatsapp'></i> Fale Comigo
+                            </button>
+                            <button class="hero-button primary" onclick="showSection('projetos')">
+                                <i class='fas fa-lightbulb'></i> Ver Projetos
+                            </button>
+                            <button class="hero-button primary" style="background: linear-gradient(135deg, #f9c200, #f59e0b); color: #000; font-weight: bold; box-shadow: 0 4px 15px rgba(249, 194, 0, 0.3);" onclick="openMandatoModal()">
+                                <i class='fas fa-bullhorn' style='margin-right: 8px;'></i> Este Mandato É Seu - Participe Comigo
+                            </button>
+                            <button class="hero-button primary" onclick="showSection('cursos')">
+                                <i class='fas fa-graduation-cap'></i> Cursos Comunitários
+                            </button>
+                            <button class="hero-button primary" onclick="abrirAssistente()" style="background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; font-weight: bold; box-shadow: 0 4px 15px rgba(30, 64, 175, 0.3);">
+                                <i class='fas fa-robot'></i> Assistente Digital
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="navigation" id="navigation">
+            <div class="container">
+                <ul class="nav-menu" id="navMenu">
+                    <li>
+                        <button
+                            class="nav-button active"
+                            data-section="mandato"
+                        >
+                            <i class="fas fa-trophy"></i> Mandato
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button" data-section="biografia">
+                            <i class="fas fa-user"></i> Biografia
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button" data-section="projetos">
+                            <i class="fas fa-lightbulb"></i> Projetos
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button" data-section="agenda">
+                            <i class="fas fa-calendar-alt"></i> Agenda Pública
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button" data-section="news">
+                            <i class="fas fa-newspaper"></i> Notícias
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button" data-section="galeria">
+                            <i class="fas fa-images"></i> Galeria
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="nav-button" data-section="contato">
+                            <i class="fas fa-comments"></i> Contato
+                        </button>
+                    </li>
+                    <li>
+                        <button class="nav-button" data-section="localizacao">
+                            <i class="fas fa-map-marker-alt"></i> Localização
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <!-- Mandato Section -->
+                <section id="mandato" class="content-section active">
+                    <div class="section-header">
+                        <h2><i class="fas fa-trophy"></i> Mandato</h2>
+                        <p>Principais ações e conquistas em destaque</p>
+                    </div>
+
+                    <div class="achievements-grid">
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Nova UBS São José</h3>
+                                <p>
+                                    Aprovação unânime do projeto para construção
+                                    de nova Unidade Básica de Saúde,
+                                    beneficiando mais de 3.000 famílias
+                                </p>
+                                <span class="achievement-status completed"
+                                    >Aprovado</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-futbol"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Quadras Poliesportivas</h3>
+                                <p>
+                                    Construção de 3 quadras poliesportivas em
+                                    bairros periféricos, promovendo o esporte e
+                                    a inclusão social
+                                </p>
+                                <span class="achievement-status completed"
+                                    >Concluído</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Programa de Microcrédito</h3>
+                                <p>
+                                    Criação de linha de crédito facilitado para
+                                    microempreendedores, fortalecendo a economia
+                                    local
+                                </p>
+                                <span class="achievement-status in-progress"
+                                    >Em Andamento</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="achievement-card">
+                            <div class="achievement-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3>Programa Futuro Digital</h3>
+                                <p>
+                                    Inclusão digital através de cursos gratuitos
+                                    de informática para jovens e idosos
+                                </p>
+                                <span class="achievement-status approved"
+                                    >Aprovado</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mandate-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">15</div>
+                            <div class="stat-label">
+                                Projetos de Lei Aprovados
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Audiências Públicas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3.000+</div>
+                            <div class="stat-label">Famílias Beneficiadas</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">89%</div>
+                            <div class="stat-label">Taxa de Aprovação</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Biografia Section -->
+                <section id="biografia" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-user"></i> Biografia</h2>
+                        <p>
+                            Conheça a trajetória e os valores que norteiam nosso
+                            trabalho
+                        </p>
+                    </div>
+
+                    <div class="biography-content">
+                        <div class="biography-photo">
+                            <img
+                                src="https://via.placeholder.com/400x500/1e40af/ffffff?text=Vereador+Emicleiton"
+                                alt="Vereador Emicleiton Rubem da Conceição"
+                                class="biography-image"
+                            />
+                            <div class="biography-info-card">
+                                <h4>Emicleiton Rubem da Conceição</h4>
+                                <p>Vereador de Monte Santo - BA</p>
+                                <p>Mandato: 2021-2024</p>
+                                <div class="social-links">
+                                    <a href="#" aria-label="Facebook"
+                                        ><i class="fab fa-facebook"></i
+                                    ></a>
+                                    <a href="#" aria-label="Instagram"
+                                        ><i class="fab fa-instagram"></i
+                                    ></a>
+                                    <a
+                                        href="https://wa.me/5574999999999"
+                                        aria-label="WhatsApp"
+                                        ><i class="fab fa-whatsapp"></i
+                                    ></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="biography-text">
+                            <div class="biography-story">
+                                <h3>História</h3>
+                                <p>
+                                    Natural de Monte Santo, Emicleiton Rubem da
+                                    Conceição é formado em Administração Pública
+                                    e tem uma longa trajetória de serviços
+                                    prestados à comunidade montesantense.
+                                </p>
+
+                                <p>
+                                    Antes de assumir o mandato de vereador,
+                                    atuou como líder comunitário, organizando
+                                    eventos esportivos e culturais que
+                                    promoveram a integração social e o
+                                    desenvolvimento local.
+                                </p>
+
+                                <p>
+                                    Desde o início de seu primeiro mandato, tem
+                                    se destacado pela proximidade com a
+                                    população e pela apresentação de projetos
+                                    focados no desenvolvimento econômico,
+                                    melhoria da saúde pública e promoção do
+                                    esporte como ferramenta de inclusão social.
+                                </p>
+                            </div>
+
+                            <div class="values">
+                                <h4>Valores e Princípios</h4>
+                                <div class="values-grid">
+                                    <div class="value-item">
+                                        <i class="fas fa-handshake"></i>
+                                        <h5>Transparência</h5>
+                                        <p>
+                                            Gestão aberta e prestação de contas
+                                            constante
+                                        </p>
+                                    </div>
+
+                                    <div class="value-item">
+                                        <i class="fas fa-users"></i>
+                                        <h5>Proximidade</h5>
+                                        <p>
+                                            Diálogo direto e permanente com a
+                                            população
+                                        </p>
+                                    </div>
+
+                                    <div class="value-item">
+                                        <i class="fas fa-heart"></i>
+                                        <h5>Compromisso</h5>
+                                        <p>
+                                            Dedicação integral ao serviço
+                                            público
+                                        </p>
+                                    </div>
+
+                                    <div class="value-item">
+                                        <i class="fas fa-balance-scale"></i>
+                                        <h5>Justiça Social</h5>
+                                        <p>
+                                            Igualdade de oportunidades para
+                                            todos
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projetos Section -->
+                <section id="projetos" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-lightbulb"></i> Projetos</h2>
+                        <p>
+                            Conheça os principais projetos apresentados e suas
+                            situações atuais
+                        </p>
+                    </div>
+
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">
+                            Todos
+                        </button>
+                        <button class="filter-btn" data-filter="aprovado">
+                            Aprovados
+                        </button>
+                        <button class="filter-btn" data-filter="andamento">
+                            Em Andamento
+                        </button>
+                        <button class="filter-btn" data-filter="rejeitado">
+                            Rejeitados
+                        </button>
+                    </div>
+
+                    <div class="projects-grid">
+                        <div class="project-card" data-status="aprovado">
+                            <div class="project-status approved">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Aprovado</span>
+                            </div>
+                            <h3>Lei de Incentivo ao Esporte Municipal</h3>
+                            <p>
+                                Criação de programa municipal de incentivo ao
+                                esporte com foco na juventude e inclusão social
+                                através de atividades esportivas.
+                            </p>
+                            <div class="project-info">
+                                <span class="project-date"
+                                    ><i class="fas fa-calendar"></i> Aprovado em
+                                    Mar/2025</span
+                                >
+                                <span class="project-number"
+                                    >Projeto Nº 034/2025</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-status="andamento">
+                            <div class="project-status in-progress">
+                                <i class="fas fa-clock"></i>
+                                <span>Em Andamento</span>
+                            </div>
+                            <h3>Centro de Referência em Saúde Mental</h3>
+                            <p>
+                                Proposta de criação de centro especializado em
+                                atendimento psicológico e psiquiátrico para a
+                                população de Monte Santo.
+                            </p>
+                            <div class="project-info">
+                                <span class="project-date"
+                                    ><i class="fas fa-calendar"></i> Em
+                                    tramitação</span
+                                >
+                                <span class="project-number"
+                                    >Projeto Nº 048/2025</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-status="aprovado">
+                            <div class="project-status approved">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Aprovado</span>
+                            </div>
+                            <h3>Programa Futuro Digital</h3>
+                            <p>
+                                Iniciativa para inclusão digital da população
+                                através de cursos gratuitos de informática e
+                                tecnologia para jovens e idosos.
+                            </p>
+                            <div class="project-info">
+                                <span class="project-date"
+                                    ><i class="fas fa-calendar"></i> Aprovado em
+                                    Fev/2025</span
+                                >
+                                <span class="project-number"
+                                    >Projeto Nº 022/2025</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-status="andamento">
+                            <div class="project-status in-progress">
+                                <i class="fas fa-clock"></i>
+                                <span>Em Andamento</span>
+                            </div>
+                            <h3>Complexo Esportivo Municipal</h3>
+                            <p>
+                                Construção de complexo esportivo com quadras,
+                                piscina e academia popular para atender toda a
+                                população montesantense.
+                            </p>
+                            <div class="project-info">
+                                <span class="project-date"
+                                    ><i class="fas fa-calendar"></i> Estudo de
+                                    viabilidade</span
+                                >
+                                <span class="project-number"
+                                    >Projeto Nº 055/2025</span
+                                >
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-status="rejeitado">
+                            <div class="project-status rejected">
+                                <i class="fas fa-times-circle"></i>
+                                <span>Rejeitado</span>
+                            </div>
+                            <h3>Taxa de Iluminação Pública Diferenciada</h3>
+                            <p>
+                                Proposta de diferenciação da taxa de iluminação
+                                pública baseada na renda familiar, rejeitada por
+                                questões técnicas.
+                            </p>
+                            <div class="project-info">
+                                <span class="project-date"
+                                    ><i class="fas fa-calendar"></i> Rejeitado
+                                    em Jan/2025</span
+                                >
+                                <span class="project-number"
+                                    >Projeto Nº 012/2025</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Agenda Section -->
+                <section id="agenda" class="content-section">
+                    <div class="section-header">
+                        <h2>
+                            <i class="fas fa-calendar-alt"></i> Agenda Pública
+                        </h2>
+                        <p>Acompanhe os compromissos e eventos do mandato</p>
+                    </div>
+
+                    <div class="calendar-container">
+                        <div class="calendar-header">
+                            <button class="calendar-nav" id="prevMonth">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <h3 id="currentMonth">Julho 2025</h3>
+                            <button class="calendar-nav" id="nextMonth">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+
+                        <div class="calendar-grid">
+                            <div class="calendar-weekdays">
+                                <div class="weekday">DOM</div>
+                                <div class="weekday">SEG</div>
+                                <div class="weekday">TER</div>
+                                <div class="weekday">QUA</div>
+                                <div class="weekday">QUI</div>
+                                <div class="weekday">SEX</div>
+                                <div class="weekday">SÁB</div>
+                            </div>
+
+                            <div class="calendar-days" id="calendarDays">
+                                <!-- Calendar days will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="upcoming-events">
+                        <h3>Próximos Eventos</h3>
+                        <div class="events-list">
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">02</span>
+                                    <span class="month">JUL</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Sessão Ordinária da Câmara</h4>
+                                    <p>
+                                        <i class="fas fa-clock"></i> 10:00 -
+                                        Câmara Municipal
+                                    </p>
+                                    <p>
+                                        Discussão de projetos de lei e
+                                        requerimentos
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">05</span>
+                                    <span class="month">JUL</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Audiência Pública - Saúde</h4>
+                                    <p>
+                                        <i class="fas fa-clock"></i> 19:00 -
+                                        Centro de Convenções
+                                    </p>
+                                    <p>
+                                        Debate sobre melhorias no sistema de
+                                        saúde municipal
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="event-item">
+                                <div class="event-date">
+                                    <span class="day">08</span>
+                                    <span class="month">JUL</span>
+                                </div>
+                                <div class="event-details">
+                                    <h4>Reunião com Comerciantes</h4>
+                                    <p>
+                                        <i class="fas fa-clock"></i> 14:00 -
+                                        Associação Comercial
+                                    </p>
+                                    <p>
+                                        Discussão sobre políticas de incentivo
+                                        ao comércio local
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- News Section -->
+                <section id="news" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-newspaper"></i> Notícias</h2>
+                        <p>
+                            Acompanhe as principais ações e conquistas do
+                            mandato
+                        </p>
+                    </div>
+
+                    <div class="news-grid">
+                        <article class="news-card">
+                            <div class="news-header">
+                                <div class="news-category health">Saúde</div>
+                                <div class="news-date">25 de Junho, 2025</div>
+                            </div>
+                            <h3>
+                                Aprovação de Projeto para Nova UBS no Bairro São
+                                José
+                            </h3>
+                            <p>
+                                O vereador Emicleiton conseguiu a aprovação
+                                unânime do projeto que destina recursos para
+                                construção de uma nova Unidade Básica de Saúde
+                                no bairro São José, beneficiando mais de 3.000
+                                famílias da região.
+                            </p>
+                            <div class="news-tags">
+                                <span class="tag">Saúde Pública</span>
+                                <span class="tag">Infraestrutura</span>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-header">
+                                <div class="news-category sports">Esporte</div>
+                                <div class="news-date">20 de Junho, 2025</div>
+                            </div>
+                            <h3>
+                                Inauguração da Quadra Poliesportiva da Escola
+                                Municipal
+                            </h3>
+                            <p>
+                                Foi inaugurada a nova quadra poliesportiva da
+                                Escola Municipal João Silva, fruto da indicação
+                                do vereador Emicleiton. A obra beneficia cerca
+                                de 800 estudantes e a comunidade local.
+                            </p>
+                            <div class="news-tags">
+                                <span class="tag">Esporte</span>
+                                <span class="tag">Educação</span>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-header">
+                                <div class="news-category economy">
+                                    Economia
+                                </div>
+                                <div class="news-date">18 de Junho, 2025</div>
+                            </div>
+                            <h3>
+                                Criação do Programa Municipal de Microcrédito
+                            </h3>
+                            <p>
+                                O programa oferece linhas de crédito facilitado
+                                para microempreendedores locais, com juros
+                                subsidiados pela prefeitura. A iniciativa visa
+                                fortalecer a economia local.
+                            </p>
+                            <div class="news-tags">
+                                <span class="tag">Empreendedorismo</span>
+                                <span class="tag">Economia</span>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Galeria Section -->
+                <section id="galeria" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-images"></i> Galeria</h2>
+                        <p>
+                            Registros fotográficos das ações e eventos do
+                            mandato
+                        </p>
+                    </div>
+
+                    <div class="gallery-tabs">
+                        <button class="gallery-tab active" data-tab="photos">
+                            Fotos
+                        </button>
+                        <button class="gallery-tab" data-tab="videos">
+                            Vídeos
+                        </button>
+                    </div>
+
+                    <div class="gallery-content">
+                        <div class="photos-gallery active" id="photosGallery">
+                            <div class="photo-grid">
+                                <div class="photo-item">
+                                    <img
+                                        src="https://via.placeholder.com/300x200/1e40af/ffffff?text=Inauguração+UBS"
+                                        alt="Inauguração da UBS"
+                                    />
+                                    <div class="photo-overlay">
+                                        <h4>Inauguração da UBS São José</h4>
+                                        <p>25 de Junho, 2025</p>
+                                    </div>
+                                </div>
+
+                                <div class="photo-item">
+                                    <img
+                                        src="https://via.placeholder.com/300x200/fbbf24/1e40af?text=Quadra+Poliesportiva"
+                                        alt="Quadra Poliesportiva"
+                                    />
+                                    <div class="photo-overlay">
+                                        <h4>Entrega da Quadra Poliesportiva</h4>
+                                        <p>20 de Junho, 2025</p>
+                                    </div>
+                                </div>
+
+                                <div class="photo-item">
+                                    <img
+                                        src="https://via.placeholder.com/300x200/1e40af/ffffff?text=Sessão+Câmara"
+                                        alt="Sessão da Câmara"
+                                    />
+                                    <div class="photo-overlay">
+                                        <h4>Sessão na Câmara Municipal</h4>
+                                        <p>18 de Junho, 2025</p>
+                                    </div>
+                                </div>
+
+                                <div class="photo-item">
+                                    <img
+                                        src="https://via.placeholder.com/300x200/fbbf24/1e40af?text=Visita+Comunidade"
+                                        alt="Visita à Comunidade"
+                                    />
+                                    <div class="photo-overlay">
+                                        <h4>Visita à Comunidade Rural</h4>
+                                        <p>15 de Junho, 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="videos-gallery" id="videosGallery">
+                            <div class="video-grid">
+                                <div class="video-item">
+                                    <div class="video-thumbnail">
+                                        <img
+                                            src="https://via.placeholder.com/400x225/1e40af/ffffff?text=Vídeo+1"
+                                            alt="Vídeo 1"
+                                        />
+                                        <div class="play-button">
+                                            <i class="fas fa-play"></i>
+                                        </div>
+                                    </div>
+                                    <h4>
+                                        Prestação de Contas - 1º Semestre 2025
+                                    </h4>
+                                    <p>
+                                        Apresentação das principais ações
+                                        realizadas no primeiro semestre do
+                                        mandato
+                                    </p>
+                                </div>
+
+                                <div class="video-item">
+                                    <iframe
+                                        width="100%"
+                                        height="225"
+                                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                        title="Entrevista TV Local"
+                                        frameborder="0"
+                                        allowfullscreen
+                                    ></iframe>
+                                    <h4>Entrevista na TV Local</h4>
+                                    <p>
+                                        Entrevista sobre os projetos para o
+                                        desenvolvimento de Monte Santo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Cursos Comunitários Section -->
+                <section id="cursos" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-graduation-cap"></i> Cursos Comunitários</h2>
+                        <p>Aprenda no seu ritmo, com acesso a vídeos, apostilas e certificado oficial</p>
+                    </div>
+
+                    <div class="stats-section">
+                        <div class="stat-card">
+                            <i class="fas fa-book"></i>
+                            <div class="stat-info">
+                                <span class="stat-number" id="totalCursos">0</span>
+                                <span class="stat-label">Cursos Disponíveis</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <div class="stat-info">
+                                <span class="stat-number" id="totalAlunos">248</span>
+                                <span class="stat-label">Alunos Inscritos</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-certificate"></i>
+                            <div class="stat-info">
+                                <span class="stat-number" id="totalCertificados">156</span>
+                                <span class="stat-label">Certificados Emitidos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Explore os Cursos</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">
+                                <i class="fas fa-th"></i> Todos
+                            </button>
+                            <button class="filter-btn" data-filter="informatica">
+                                <i class="fas fa-computer"></i> Informática
+                            </button>
+                            <button class="filter-btn" data-filter="empreendedorismo">
+                                <i class="fas fa-briefcase"></i> Empreendedorismo
+                            </button>
+                            <button class="filter-btn" data-filter="cidadania">
+                                <i class="fas fa-users"></i> Cidadania
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="cursos-container" class="cursos-grid">
+                        <!-- Cursos carregados via JavaScript -->
+                    </div>
+
+                    <div class="admin-access-section">
+                        <h3>Área Administrativa</h3>
+                        <p>Acesso exclusivo para gerenciamento dos cursos</p>
+                        <a href="painel_editor.html" class="btn-admin-access">
+                            <i class="fas fa-edit"></i> Editar Cursos
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Contato Section -->
+                <section id="contato" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-comments"></i> Contato</h2>
+                        <p>
+                            Entre em contato direto com o gabinete para
+                            sugestões, dúvidas ou solicitações
+                        </p>
+                    </div>
+
+                    <div class="contact-container">
+                        <div class="contact-form-section">
+                            <h3>Envie sua Mensagem</h3>
+                            <form class="contact-form" id="contactForm">
+                                <div class="form-group">
+                                    <label for="contactName"
+                                        >Nome Completo</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="contactName"
+                                        name="name"
+                                        required
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactEmail">E-mail</label>
+                                    <input
+                                        type="email"
+                                        id="contactEmail"
+                                        name="email"
+                                        required
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactPhone">Telefone</label>
+                                    <input
+                                        type="tel"
+                                        id="contactPhone"
+                                        name="phone"
+                                    />
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactSubject">Assunto</label>
+                                    <select
+                                        id="contactSubject"
+                                        name="subject"
+                                        required
+                                    >
+                                        <option value="">
+                                            Selecione um assunto
+                                        </option>
+                                        <option value="sugestao">
+                                            Sugestão
+                                        </option>
+                                        <option value="reclamacao">
+                                            Reclamação
+                                        </option>
+                                        <option value="solicitacao">
+                                            Solicitação de Serviço
+                                        </option>
+                                        <option value="elogio">Elogio</option>
+                                        <option value="outros">Outros</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="contactMessage">Mensagem</label>
+                                    <textarea
+                                        id="contactMessage"
+                                        name="message"
+                                        rows="6"
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <button type="submit" class="submit-button">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Enviar Mensagem
+                                </button>
+                            </form>
+                        </div>
+
+                        <div class="contact-info-section">
+                            <h3>Outras Formas de Contato</h3>
+
+                            <div class="contact-methods">
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>WhatsApp Oficial</h4>
+                                        <p>(74) 99999-9999</p>
+                                        <a
+                                            href="https://wa.me/5574999999999"
+                                            target="_blank"
+                                            class="contact-button"
+                                        >
+                                            <i class="fab fa-whatsapp"></i>
+                                            Enviar Mensagem
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>E-mail Institucional</h4>
+                                        <p>
+                                            gabinete.emicleiton@montesanto.ba.gov.br
+                                        </p>
+                                        <a
+                                            href="mailto:gabinete.emicleiton@montesanto.ba.gov.br"
+                                            class="contact-button"
+                                        >
+                                            <i class="fas fa-envelope"></i>
+                                            Enviar E-mail
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Telefone do Gabinete</h4>
+                                        <p>(74) 3275-0000</p>
+                                        <a
+                                            href="tel:+557432750000"
+                                            class="contact-button"
+                                        >
+                                            <i class="fas fa-phone"></i> Ligar
+                                            Agora
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-method">
+                                    <div class="contact-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <h4>Endereço do Gabinete</h4>
+                                        <p>
+                                            Câmara Municipal de Monte Santo<br />Praça
+                                            da Matriz, s/n - Centro<br />Monte
+                                            Santo - BA, 48800-000
+                                        </p>
+                                        <div class="office-hours">
+                                            <h5>Horário de Atendimento:</h5>
+                                            <p>Segunda a Sexta: 8h às 17h</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Assistente Virtual Section -->
+                <section id="assistente" class="content-section">
+                    <div class="section-header">
+                        <h2>Assistente Virtual do Gabinete</h2>
+                        <p>
+                            Converse conosco, envie sugestões, dúvidas ou
+                            elogios. Nossa equipe está aqui para ajudar!
+                        </p>
+                    </div>
+
+                    <div class="chat-container">
+                        <div class="chat-header">
+                            <div class="chat-avatar">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="chat-info">
+                                <h3>Atendente do Gabinete</h3>
+                                <p class="chat-status">
+                                    <span class="status-dot"></span> Online
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="chat-messages" id="chatMessages">
+                            <div class="message bot-message">
+                                <div class="message-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="message-content">
+                                    <p>
+                                        Olá! 👋 Sou o assistente virtual do
+                                        gabinete do Vereador Emicleiton.
+                                    </p>
+                                    <p>Como posso ajudá-lo hoje? Você pode:</p>
+                                    <ul>
+                                        <li>
+                                            🤝 Perguntar como falar com o
+                                            vereador
+                                        </li>
+                                        <li>
+                                            💡 Enviar sugestões para melhorar
+                                            nossa cidade
+                                        </li>
+                                        <li>
+                                            📞 Solicitar informações de contato
+                                        </li>
+                                        <li>📅 Agendar uma reunião</li>
+                                        <li>
+                                            ❓ Tirar dúvidas sobre o mandato
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chat-input-container">
+                            <div class="chat-input-group">
+                                <input
+                                    type="text"
+                                    id="nomeUsuario"
+                                    placeholder="Seu nome (opcional)"
+                                    class="chat-name-input"
+                                />
+                            </div>
+                            <div class="chat-input-group">
+                                <textarea
+                                    id="chatInput"
+                                    placeholder="Digite sua mensagem aqui..."
+                                    class="chat-input"
+                                    rows="2"
+                                ></textarea>
+                                <button id="sendButton" class="chat-send-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Localização Section -->
+                <section id="localizacao" class="content-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-map-marker-alt"></i> Localização</h2>
+                        <p>Localização do Gabinete e pontos importantes de Monte Santo - BA</p>
+                    </div>
+
+                    <div class="location-content">
+                        <div class="location-info">
+                            <div class="info-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Câmara Municipal</h3>
+                                    <p>Rua da Câmara Municipal, s/n<br>
+                                    Centro, Monte Santo - BA<br>
+                                    CEP: 48800-000</p>
+                                    <p><strong>Horário:</strong> Segunda a Sexta, 8h às 17h</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="card-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="card-content">
+                                    <h3>Contato</h3>
+                                    <p><i class="fas fa-phone"></i> (74) 3275-0000</p>
+                                    <p><i class="fab fa-whatsapp"></i> (74) 99999-9999</p>
+                                    <p><i class="fas fa-envelope"></i> gabinete.emicleiton@montesanto.ba.gov.br</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="map-container">
+                            <div class="map-header">
+                                <h3><i class="fas fa-map"></i> Monte Santo - Bahia</h3>
+                                <p>Visualize a localização da Câmara Municipal e outros pontos importantes da cidade</p>
+                            </div>
+                            
+                            <!-- Mapa Interativo -->
+                            <div class="map-wrapper">
+                                <iframe 
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62234.89856741!2d-39.36629!3d-10.43721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x773c92a7c20e70d%3A0x19e0e3e1b5c3e15!2sMonte%20Santo%2C%20BA!5e0!3m2!1spt-BR!2sbr!4v1699123456789!5m2!1spt-BR!2sbr"
+                                    width="100%" 
+                                    height="400" 
+                                    style="border:0; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
+
+                            <div class="map-info">
+                                <div class="city-stats">
+                                    <div class="stat-item">
+                                        <i class="fas fa-users"></i>
+                                        <span class="stat-number">~52.000</span>
+                                        <span class="stat-label">Habitantes</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-mountain"></i>
+                                        <span class="stat-number">458m</span>
+                                        <span class="stat-label">Altitude</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <i class="fas fa-ruler-combined"></i>
+                                        <span class="stat-number">2.035 km²</span>
+                                        <span class="stat-label">Área</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="location-description">
+                                    <h4>Sobre Monte Santo</h4>
+                                    <p>Monte Santo é um município brasileiro localizado no interior da Bahia, famoso por sua rica história, cultura religiosa e paisagens naturais únicas. A cidade é conhecida pela Via Sacra e pela capela no alto da Serra da Santa Cruz.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h4>Gabinete Digital</h4>
+                        <p>Transparência e proximidade com o cidadão</p>
+                        <div class="footer-social">
+                            <h5>Siga-nos nas redes sociais:</h5>
+                            <div class="social-links">
+                                <a href="#" aria-label="Facebook"
+                                    ><i class="fab fa-facebook"></i
+                                ></a>
+                                <a href="#" aria-label="Instagram"
+                                    ><i class="fab fa-instagram"></i
+                                ></a>
+                                <a href="#" aria-label="Twitter"
+                                    ><i class="fab fa-twitter"></i
+                                ></a>
+                                <a
+                                    href="https://wa.me/5574999999999"
+                                    aria-label="WhatsApp"
+                                    ><i class="fab fa-whatsapp"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Contato</h4>
+                        <p><i class="fas fa-phone"></i> (74) 3275-0000</p>
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            gabinete.emicleiton@montesanto.ba.gov.br
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i> Câmara
+                            Municipal de Monte Santo
+                        </p>
+                        <p>
+                            <i class="fas fa-clock"></i> Segunda a Sexta: 8h às
+                            17h
+                        </p>
+                    </div>
+
+                    <div class="footer-section">
+                        <h4>Acesso Rápido</h4>
+                        <ul class="footer-links">
+                            <li>
+                                <a href="#" onclick="showSection('mandato')"
+                                    >Mandato</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showSection('projetos')"
+                                    >Projetos</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#" onclick="showSection('agenda')"
+                                    >Agenda</a
+                                >
+                            </li>
+                            <li>
+                                <a href="cadastro.html"
+                                    >Cadastro de Eleitores</a
+                                >
+                            </li>
+                            <li><a href="login.html">Login Vereador</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>
+                        &copy; <span id="currentYear">2025</span> Gabinete
+                        Digital - Vereador Emicleiton. Todos os direitos
+                        reservados.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Botões flutuantes removidos conforme solicitado -->
+
+        <!-- Assistente Digital Simples -->
+        <div class="assistente-modal" id="assistenteModal">
+            <div class="assistente-container">
+                <div class="assistente-header">
+                    <h3><i class="fas fa-robot"></i> Assistente Digital</h3>
+                    <button onclick="fecharAssistente()" class="btn-fechar">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="assistente-content">
+                    <p>Como posso ajudar você hoje?</p>
+                    <div class="assistente-opcoes">
+                        <button onclick="abrirFormSugestao()" class="opcao-btn verde">
+                            <i class="fas fa-lightbulb"></i>
+                            Enviar Sugestão
+                        </button>
+                        <button onclick="abrirFormReclamacao()" class="opcao-btn laranja">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Reportar Problema
+                        </button>
+                        <button onclick="showSection('agenda')" class="opcao-btn azul">
+                            <i class="fas fa-calendar"></i>
+                            Ver Agenda
+                        </button>
+                        <button onclick="showSection('contato')" class="opcao-btn ciano">
+                            <i class="fas fa-phone"></i>
+                            Contato
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Este Mandato é Seu -->
+        <div class="mandato-modal" id="mandatoModal">
+            <div class="mandato-content">
+                <div class="mandato-header">
+                    <h2>
+                        <i class="fas fa-hands-helping"></i> Este Mandato é Seu
+                    </h2>
+                    <button class="close-mandato" onclick="closeMandatoModal()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+
+                <div class="mandato-body">
+                    <div class="mandato-intro">
+                        <p>
+                            Sua opinião é fundamental para melhorar nossa
+                            cidade! Compartilhe suas sugestões, reclamações ou
+                            ideias para que possamos trabalhar juntos por Monte
+                            Santo.
+                        </p>
+                    </div>
+
+                    <div class="mandato-tabs">
+                        <button
+                            class="tab-btn active"
+                            onclick="switchMandatoTab('sugestoes')"
+                        >
+                            <i class="fas fa-lightbulb"></i> Sugestões
+                        </button>
+                        <button
+                            class="tab-btn"
+                            onclick="switchMandatoTab('assistente')"
+                        >
+                            <i class="fas fa-robot"></i> Assistente IA
+                        </button>
+                    </div>
+
+                    <!-- Tab Sugestões -->
+                    <div class="tab-content active" id="sugestoesTab">
+                        <form class="sugestoes-form" id="sugestoesForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="nomeCompleto"
+                                        >Nome Completo *</label
+                                    >
+                                    <input
+                                        type="text"
+                                        id="nomeCompleto"
+                                        required
+                                        placeholder="Digite seu nome completo"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="emailContato">E-mail *</label>
+                                    <input
+                                        type="email"
+                                        id="emailContato"
+                                        required
+                                        placeholder="seu@email.com"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="telefoneContato"
+                                        >Telefone</label
+                                    >
+                                    <input
+                                        type="tel"
+                                        id="telefoneContato"
+                                        placeholder="(75) 99999-9999"
+                                    />
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipoSugestao">Tipo *</label>
+                                    <select id="tipoSugestao" required>
+                                        <option value="">Selecione</option>
+                                        <option value="sugestao">
+                                            Sugestão
+                                        </option>
+                                        <option value="reclamacao">
+                                            Reclamação
+                                        </option>
+                                        <option value="denuncia">
+                                            Denúncia
+                                        </option>
+                                        <option value="elogio">Elogio</option>
+                                        <option value="solicitacao">
+                                            Solicitação
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="assuntoSugestao">Assunto *</label>
+                                <input
+                                    type="text"
+                                    id="assuntoSugestao"
+                                    required
+                                    placeholder="Resumo da sua sugestão"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="mensagemSugestao"
+                                    >Sua Mensagem *</label
+                                >
+                                <textarea
+                                    id="mensagemSugestao"
+                                    required
+                                    rows="6"
+                                    placeholder="Descreva detalhadamente sua sugestão, reclamação ou ideia para melhorar nossa cidade..."
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bairroSugestao"
+                                    >Bairro/Localidade</label
+                                >
+                                <input
+                                    type="text"
+                                    id="bairroSugestao"
+                                    placeholder="Qual bairro ou localidade está relacionada?"
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="localSugestao"
+                                    >Local Específico (opcional)</label
+                                >
+                                <input
+                                    type="text"
+                                    id="localSugestao"
+                                    name="localizacao"
+                                    placeholder="Ex: Rua da Padaria, próximo ao posto de saúde..."
+                                />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fotoSugestao"
+                                    >Foto Relacionada (opcional)</label
+                                >
+                                <input
+                                    type="file"
+                                    id="fotoSugestao"
+                                    name="foto"
+                                    accept="image/*"
+                                />
+                                <small class="form-help">
+                                    Máximo 2MB. Formatos: JPG, PNG, GIF
+                                </small>
+                            </div>
+
+                            <button
+                                type="submit"
+                                class="enviar-sugestao-btn"
+                                id="enviarSugestaoBtn"
+                            >
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar Sugestão
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Tab Assistente IA -->
+                    <div class="tab-content" id="assistenteTab">
+                        <div class="chat-container">
+                            <div class="chat-messages" id="chatMandatoMessages">
+                                <div class="bot-message">
+                                    <div class="message-avatar">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <div class="message-content">
+                                        <p>
+                                            Olá! Sou o assistente digital do
+                                            Gabinete. Como posso ajudar você
+                                            hoje?
+                                        </p>
+                                        <div class="quick-options">
+                                            <button
+                                                onclick="sendQuickSuggestion('Como denunciar um problema na cidade?')"
+                                            >
+                                                Como denunciar problemas?
+                                            </button>
+                                            <button
+                                                onclick="sendQuickSuggestion('Quais projetos estão em andamento?')"
+                                            >
+                                                Projetos em andamento
+                                            </button>
+                                            <button
+                                                onclick="sendQuickSuggestion('Como acompanhar minha solicitação?')"
+                                            >
+                                                Acompanhar solicitação
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat-input-container">
+                                <input
+                                    type="text"
+                                    id="chatMandatoInput"
+                                    placeholder="Digite sua pergunta aqui..."
+                                    onkeypress="handleMandatoChatEnter(event)"
+                                />
+                                <button
+                                    onclick="sendMandatoMessage()"
+                                    id="sendMandatoBtn"
+                                >
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EmailJS Library -->
+        <script
+            type="text/javascript"
+            src="https://cdn.emailjs.com/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+            // Inicializar EmailJS
+            (function () {
+                emailjs.init("ypFrla8Fz7VXnIRPY");
+            })();
+        </script>
+
+        <script src="script.js"></script>
+        <script src="assistente_fix.js"></script>
+    </body>
+</html>

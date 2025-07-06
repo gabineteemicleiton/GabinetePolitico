@@ -1,0 +1,116 @@
+Quero um painel administrativo completo e funcional, que permita editar **100% do conteúdo público do site**, incluindo todo o conteúdo de exemplo já visível atualmente. O painel deve permitir **adicionar, editar e excluir** informações sem necessidade de mexer no código.
+
+A estrutura deve conter os seguintes módulos, todos com formulários funcionais e persistência dos dados (via localStorage, JSON ou backend, se possível):
+
+---
+
+🔵 **1. Cabeçalho do Site**
+- Editar título principal do site
+- Nome do vereador
+- Cidade
+- Upload de imagem do vereador (círculo no topo)
+- Slogan principal
+- Número de WhatsApp
+
+---
+
+🟡 **2. Botões de Ação do topo (ex: Fale Conosco, Projetos etc.)**
+- Editar texto e link de cada botão
+- Permitir adicionar/remover botões
+
+---
+
+🟢 **3. Seção "Mandato Atual" (cards azuis)**
+- Título: "Mandato Atual" (editável)
+- Período (ex: 2021–2024)
+- Campo de status (ex: Em Exercício, Concluído)
+- Campos dos 4 cards:
+  - Anos de mandato
+  - Projetos ativos
+  - Cidadãos atendidos
+  - Satisfação
+- Todos os textos e números devem ser editáveis
+
+---
+
+🟣 **4. Biografia**
+- Campo de texto longo com formatação (parágrafos, negrito, etc.)
+- Upload de imagem de apoio (opcional)
+
+---
+
+🟠 **5. Projetos (já existem exemplos visíveis)**
+- Cada projeto deve ter:
+  - Título
+  - Descrição
+  - Imagem (upload)
+  - Status (ativo/concluído)
+- Permitir: Adicionar, Editar e Excluir projetos
+
+---
+
+🔵 **6. Agenda Pública (já existem exemplos visíveis)**
+- Campos por evento:
+  - Título
+  - Data e horário
+  - Local
+  - Descrição
+- Permitir: Adicionar, Editar e Remover eventos
+
+---
+
+🟣 **7. Notícias (já existem exemplos visíveis)**
+- Campos por notícia:
+  - Título
+  - Data
+  - Texto (editor rich text)
+  - Imagem de capa
+- Permitir: Adicionar, Editar e Excluir notícias
+
+---
+
+🟢 **8. Galeria (já existem fotos e vídeos visíveis)**
+- Upload de fotos
+- Upload de vídeos
+- Campo de descrição (opcional)
+- Categorizar por tipo: Foto ou Vídeo
+- Permitir: Adicionar e Remover itens da galeria
+
+---
+
+🟡 **9. Contato e Localização**
+- Editar:
+  - E-mail
+  - Telefone
+  - WhatsApp
+  - Redes sociais (Facebook, Instagram, etc.)
+  - Link de localização ou coordenadas (para mapa)
+  - Texto institucional de contato
+
+---
+
+🟠 **10. Rodapé do Site**
+- Texto institucional editável
+- Canais de atendimento (ex: WhatsApp, e-mail)
+- Copyright
+
+---
+
+⚙️ **11. Configurações Gerais (Opcional)**
+- Alterar cores principais do site (modo visual)
+- Nome do painel administrativo
+- Upload do logo do site
+- Alterar senha de acesso ao painel
+
+---
+
+🎯 **Requisitos Técnicos**
+- Todos os dados devem ser armazenados e carregados dinamicamente no site público
+- Usar `localStorage` para persistência local ou JSON externo (mínimo)
+- Ideal: já deixar estrutura preparada para backend (JSON ou Firebase)
+- Design limpo, moderno, acessível no mobile e intuitivo para qualquer vereador usar sozinho
+
+---
+
+✅ Painel deve estar **100% funcional**, sem necessidade de programação futura para edição de conteúdo.
+

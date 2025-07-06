@@ -1,0 +1,151 @@
+echo '<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cursos Comunitários</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Cursos Comunitários com Certificado</h1>
+    <p>Aprenda no seu ritmo, com acesso a vídeos, apostilas e certificado.</p>
+    <a href="painel_editor.html">✏️ Editar Cursos</a>
+  </header>
+
+  <main id="cursos-container" class="cursos-grid">
+    <!-- Cursos carregados via JavaScript -->
+  </main>
+
+  <script src="cursos.js"></script>
+</body>
+</html>' > cursos.html
+
+echo 'fetch("cursos.json")
+  .then(res => res.json())
+  .then(cursos => {
+    const container = document.getElementById("cursos-container");
+    cursos.forEach(curso => {
+      container.innerHTML += `
+        <div class="curso-card">
+          <iframe src="${curso.videoUrl}" frameborder="0" allowfullscreen></iframe>
+          <h2>${curso.titulo}</h2>
+          <p>${curso.descricao}</p>
+          ${curso.apostila ? `<p><a href="${curso.apostila}" target="_blank">📘 Baixar Apostila</a></p>` : ""}
+          <button onclick="gerarCertificado('${curso.titulo}')">📄 Gerar Certificado</button>
+        </div>
+      `;
+    });
+  });
+
+function gerarCertificado(curso) {
+  const nome = prompt("Digite seu nome completo para o certificado:");
+  if (!nome) return alert("Nome obrigatório para gerar o certificado.");
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFontSize(16);
+  doc.text("Certificado de Conclusão", 20, 30);
+  doc.setFontSize(12);
+  doc.text(\`Certificamos que \${nome} concluiu o curso "\${curso}" com êxito.\`, 20, 50);
+  doc.text("Emitido por Gabinete Digital", 20, 70);
+  doc.save(\`certificado-\${nome}.pdf\`);
+}' > cursos.js
+
+echo '[
+  {
+    "titulo": "Curso de Informática Básica",
+    "descricao": "Aprenda o básico do computador, internet e ferramentas digitais.",
+    "videoUrl": "https://www.youtube.com/embed/VIDEO_ID1",
+    "apostila": "https://example.com/apostila-informatica.pdf"
+  },
+  {
+    "titulo": "Empreendedorismo Local",
+    "descricao": "Descubra como começar seu negócio na sua cidade.",
+    "videoUrl": "https://www.youtube.com/embed/VIDEO_ID2",
+    "apostila": "https://example.com/apostila-empreendedorismo.pdf"
+  }
+]' > cursos.json
+
+echo '<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Editor de Cursos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Editor de Cursos</h1>
+  <form id="formCurso">
+    <input type="text" placeholder="Título do curso" id="titulo" required /><br />
+    <textarea placeholder="Descrição" id="descricao"></textarea><br />
+    <input type="text" placeholder="Link do vídeo (embed)" id="videoUrl" required /><br />
+    <input type="text" placeholder="Link da apostila (opcional)" id="apostila" /><br />
+    <button type="submit">Adicionar Curso</button>
+  </form>
+
+  <script>
+    document.getElementById("formCurso").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const curso = {
+        titulo: document.getElementById("titulo").value,
+        descricao: document.getElementById("descricao").value,
+        videoUrl: document.getElementById("videoUrl").value,
+        apostila: document.getElementById("apostila").value
+      };
+
+      let cursos = await fetch("cursos.json").then(r => r.json());
+      cursos.push(curso);
+
+      await fetch("cursos.json", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(cursos)
+      });
+
+      alert("Curso adicionado! Atualize a página de cursos.");
+    });
+  </script>
+</body>
+</html>' > painel_editor.html
+
+echo 'body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f9fc;
+}
+
+header {
+  background: #003366;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 20px;
+}
+
+.curso-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}' > style.css
+
+echo '✅ Página de cursos criada com sucesso! Acesse: cursos.html'
