@@ -1,63 +1,664 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cadastro de Eleitor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f5f7fa;
-      padding: 2rem;
-    }
-    .box {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #1D3557;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    input, button {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-    }
-    .voltar {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-    .voltar a {
-      text-decoration: none;
-      background: #1D3557;
-      color: #fff;
-      padding: 0.75rem 1rem;
-      border-radius: 8px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Eleitores - Gabinete Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e40af;
+            --light-blue: #3b82f6;
+            --dark-blue: #1e3a8a;
+            --primary-yellow: #fbbf24;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --gray: #64748b;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --transition: 0.3s ease;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--light-gray);
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+            color: var(--white);
+            padding: 1.5rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .brand-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .back-link,
+        .admin-link {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .back-link:hover,
+        .admin-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .admin-link {
+            background: rgba(251, 191, 36, 0.2);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+
+        .admin-link:hover {
+            background: rgba(251, 191, 36, 0.3);
+        }
+
+        .main-content {
+            padding: 3rem 0;
+        }
+
+        .form-container {
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-subtitle {
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .form-content {
+            padding: 2rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .required {
+            color: #dc2626;
+        }
+
+        .form-input,
+        .form-select {
+            padding: 0.875rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
+            font-family: inherit;
+        }
+
+        .form-input:focus,
+        .form-select:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-section {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .submit-button {
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .submit-button:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-button:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .alternative-action {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, #fef3c7, #fbbf24);
+            border-radius: 20px;
+            border: 3px solid #f59e0b;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+            animation: highlightPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes highlightPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .alternative-text {
+            font-size: 1.1rem;
+            color: #92400e;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+
+        .visit-site-btn {
+            background: linear-gradient(135deg, #1e40af, #3b82f6);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 1.25rem 2.5rem;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
+            border: 3px solid #fbbf24;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .visit-site-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(30, 64, 175, 0.6);
+            background: linear-gradient(135deg, #3b82f6, #1e40af);
+            border-color: #f59e0b;
+        }
+
+        .success-message {
+            background: #f0fdf4;
+            color: #16a34a;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #16a34a;
+            margin-top: 1rem;
+            display: none;
+            text-align: left;
+        }
+
+        .info-box {
+            background: #eff6ff;
+            color: var(--primary-blue);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-blue);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+                max-width: 100%;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                justify-content: center;
+                gap: 0.5rem;
+                align-items: center;
+            }
+            
+            .form-container {
+                margin: 1rem 0 !important;
+                padding: 1.5rem !important;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .form-group input,
+            .form-group select {
+                width: 100% !important;
+                font-size: 1rem !important;
+                padding: 0.75rem !important;
+            }
+            
+            .btn {
+                width: 100% !important;
+                padding: 0.75rem 1rem !important;
+                font-size: 0.9rem !important;
+                margin: 0.25rem 0 !important;
+            }
+            
+            .header h1 {
+                font-size: 1.5rem !important;
+            }
+            
+            .header p {
+                font-size: 0.9rem !important;
+            }
+            }
+
+            .back-link,
+            .admin-link {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .form-container {
+                margin: 0 1rem;
+            }
+
+            .form-content {
+                padding: 1.5rem;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+
+            .submit-button {
+                width: 100%;
+                padding: 1rem;
+            }
+
+            .alternative-action {
+                margin: 1.5rem 0;
+                padding: 1.5rem;
+            }
+
+            .alternative-text {
+                font-size: 1rem;
+            }
+
+            .visit-site-btn {
+                padding: 1rem 2rem;
+                font-size: 1.1rem;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Cadastro do Cidadão</h1>
-    <form>
-      <input type="text" placeholder="Nome completo" required>
-      <input type="email" placeholder="E-mail" required>
-      <button type="submit">Cadastrar</button>
-    </form>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo">
+                        <i class="fas fa-vote-yea"></i>
+                    </div>
+                    <div class="brand-text">
+                        <h1>Cadastro de Eleitores</h1>
+                        <p>Gabinete Digital - Vereador Emicleiton</p>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <a href="index.html" class="back-link">
+                        <i class="fas fa-arrow-left"></i>
+                        Voltar ao Site
+                    </a>
+                    <a href="login.html" class="admin-link">
+                        <i class="fas fa-user-shield"></i>
+                        Login Vereador
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="voltar">
-      <a href="site.html">← Voltar ao Site</a>
-    </div>
-  </div>
+    <main class="main-content">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h1 class="form-title">Cadastro de Eleitor</h1>
+                    <p class="form-subtitle">Mantenha-se conectado com o gabinete e receba informações importantes</p>
+                </div>
+
+                <div class="form-content">
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i> 
+                        <strong>Seus dados estão seguros:</strong> As informações fornecidas serão utilizadas apenas para comunicação oficial do gabinete e não serão compartilhadas com terceiros.
+                    </div>
+
+                    <form id="cadastroForm">
+                        <div class="form-grid">
+                            <div class="form-group full-width">
+                                <label class="form-label">
+                                    <i class="fas fa-user"></i>
+                                    Nome Completo <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-input" id="nomeCompleto" required placeholder="Digite seu nome completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-phone"></i>
+                                    Telefone <span class="required">*</span>
+                                </label>
+                                <input type="tel" class="form-input" id="telefone" required placeholder="(74) 99999-9999">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    Data de Nascimento <span class="required">*</span>
+                                </label>
+                                <input type="date" class="form-input" id="dataNascimento" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Bairro <span class="required">*</span>
+                                </label>
+                                <select class="form-select" id="bairro" required>
+                                    <option value="">Selecione seu bairro</option>
+                                    <option value="Centro">Centro</option>
+                                    <option value="São José">São José</option>
+                                    <option value="Nossa Senhora de Fátima">Nossa Senhora de Fátima</option>
+                                    <option value="Santo Antônio">Santo Antônio</option>
+                                    <option value="São Francisco">São Francisco</option>
+                                    <option value="Vila Nova">Vila Nova</option>
+                                    <option value="Cohab">Cohab</option>
+                                    <option value="Primavera">Primavera</option>
+                                    <option value="Alto da Cruz">Alto da Cruz</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-city"></i>
+                                    Cidade <span class="required">*</span>
+                                </label>
+                                <input type="text" class="form-input" id="cidade" required value="Monte Santo" placeholder="Digite sua cidade">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-venus-mars"></i>
+                                    Gênero <span class="required">*</span>
+                                </label>
+                                <select class="form-select" id="genero" required>
+                                    <option value="">Selecione</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
+                                    <option value="Outro">Outro</option>
+                                    <option value="Prefiro não informar">Prefiro não informar</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-id-card"></i>
+                                    CPF (opcional)
+                                </label>
+                                <input type="text" class="form-input" id="cpf" placeholder="000.000.000-00">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-map-pin"></i>
+                                    Zona Eleitoral (opcional)
+                                </label>
+                                <input type="number" class="form-input" id="zonaEleitoral" placeholder="Ex: 050">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">
+                                    <i class="fas fa-list-ol"></i>
+                                    Seção (opcional)
+                                </label>
+                                <input type="number" class="form-input" id="secao" placeholder="Ex: 0123">
+                            </div>
+                        </div>
+
+                        <div class="submit-section">
+                            <button type="submit" class="submit-button" id="submitButton">
+                                <i class="fas fa-check"></i>
+                                Cadastrar
+                            </button>
+                            
+                            <div class="alternative-action">
+                                <p class="alternative-text">Não quer se cadastrar agora?</p>
+                                <a href="index.html" class="visit-site-btn">
+                                    <i class="fas fa-globe"></i>
+                                    Visitar Site do Gabinete
+                                </a>
+                            </div>
+                            
+                            <div class="success-message" id="successMessage">
+                                <i class="fas fa-check-circle"></i>
+                                <strong>Cadastro realizado com sucesso!</strong><br>
+                                Obrigado por se cadastrar! Em breve você receberá informações importantes do nosso gabinete.
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Máscaras para os campos
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{2})(\d)/, '($1) $2');
+            value = value.replace(/(\d{5})(\d)/, '$1-$2');
+            e.target.value = value;
+        });
+
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d)/, '$1.$2');
+            value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+            e.target.value = value;
+        });
+
+        // Submit do formulário
+        document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitButton = document.getElementById('submitButton');
+            const successMessage = document.getElementById('successMessage');
+            
+            // Coletar dados do formulário
+            const formData = {
+                id: Date.now(), // ID único baseado em timestamp
+                nomeCompleto: document.getElementById('nomeCompleto').value,
+                telefone: document.getElementById('telefone').value,
+                dataNascimento: document.getElementById('dataNascimento').value,
+                bairro: document.getElementById('bairro').value,
+                cidade: document.getElementById('cidade').value,
+                genero: document.getElementById('genero').value,
+                cpf: document.getElementById('cpf').value || null,
+                zonaEleitoral: document.getElementById('zonaEleitoral').value || null,
+                secao: document.getElementById('secao').value || null,
+                dataCadastro: new Date().toISOString(),
+                status: 'ativo'
+            };
+            
+            // Mostrar loading
+            submitButton.innerHTML = '<div class="loading"></div> Cadastrando...';
+            submitButton.disabled = true;
+            
+            // Simular envio (em uma aplicação real, enviaria para o servidor)
+            setTimeout(() => {
+                // Salvar no localStorage (simulando banco de dados)
+                let eleitores = JSON.parse(localStorage.getItem('eleitores') || '[]');
+                eleitores.push(formData);
+                localStorage.setItem('eleitores', JSON.stringify(eleitores));
+                
+                // Mostrar sucesso
+                successMessage.style.display = 'block';
+                submitButton.innerHTML = '<i class="fas fa-check"></i> Cadastrado!';
+                submitButton.style.background = '#16a34a';
+                
+                // Limpar formulário após 3 segundos
+                setTimeout(() => {
+                    document.getElementById('cadastroForm').reset();
+                    submitButton.innerHTML = '<i class="fas fa-check"></i> Cadastrar';
+                    submitButton.style.background = '';
+                    submitButton.disabled = false;
+                    successMessage.style.display = 'none';
+                    
+                    // Scroll para o topo
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 3000);
+                
+            }, 2000);
+        });
+
+        // Auto-focus no primeiro campo
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('nomeCompleto').focus();
+        });
+    </script>
 </body>
 </html>
