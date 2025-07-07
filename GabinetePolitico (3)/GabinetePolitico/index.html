@@ -3,124 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login - Gabinete Digital</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Gabinete Digital - Login</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
+    :root {
+      --primary-navy: #1D3557;
+      --primary-gold: #F4A300;
+      --text-secondary: #666;
+      --white: #fff;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0057B8 0%, #87CEEB 50%, #ffffff 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
+      padding: 1rem;
     }
-
     .container {
-      background: white;
+      background: #fff;
       padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-      text-align: center;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       max-width: 400px;
       width: 100%;
+      text-align: center;
     }
-
-    h1 {
+    .foto-vereador {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--primary-gold);
       margin-bottom: 1rem;
+    }
+    h1 {
+      color: var(--primary-navy);
       font-size: 1.5rem;
-      color: #1D3557;
+      margin-bottom: 0.5rem;
     }
-
     p {
-      margin-bottom: 2rem;
-      color: #555;
-      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
     }
-
     .btn {
       display: block;
       width: 100%;
-      margin-bottom: 1rem;
       padding: 0.75rem;
+      margin-bottom: 1rem;
       border: none;
       border-radius: 8px;
+      font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
-      font-weight: 600;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
-
     .btn-primary {
-      background: #1D3557;
+      background: var(--primary-navy);
       color: white;
     }
-
     .btn-primary:hover {
       background: #0f1d2e;
     }
-
     .btn-secondary {
-      background: #F4A300;
+      background: var(--primary-gold);
       color: white;
     }
-
     .btn-secondary:hover {
       background: #d18b00;
     }
-
     .btn-outline {
       background: transparent;
-      color: #1D3557;
-      border: 2px solid #1D3557;
+      border: 2px solid var(--primary-navy);
+      color: var(--primary-navy);
     }
-
     .btn-outline:hover {
-      background: #1D3557;
+      background: var(--primary-navy);
       color: white;
+    }
+    .modal {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    .modal-box input {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <img src="vereador.png" alt="Vereador" style="width: 100px; border-radius: 50%; margin-bottom: 1rem;" />
+    <img src="vereador.png" alt="Vereador" class="foto-vereador">
     <h1>Gabinete Digital</h1>
     <p>Escolha uma opção para continuar:</p>
 
-    <!-- Botão de login (abre modal ou chama função) -->
-    <button class="btn btn-primary" onclick="showLoginModal()">Acesso do Vereador</button>
+    <button class="btn btn-primary" onclick="abrirModal()">
+      <i class="fas fa-user-shield"></i> Acesso do Vereador
+    </button>
 
-    <!-- Portal do Cidadão (cadastro) -->
-    <a href="cadastro.html"><button class="btn btn-secondary">Portal do Cidadão</button></a>
+    <a href="cadastro.html">
+      <button class="btn btn-secondary">
+        <i class="fas fa-users"></i> Portal do Cidadão
+      </button>
+    </a>
 
-    <!-- Visitar site público -->
-    <a href="site.html"><button class="btn btn-outline">Visitar o Site</button></a>
+    <a href="site.html">
+      <button class="btn btn-outline">
+        <i class="fas fa-globe"></i> Visitar o Site
+      </button>
+    </a>
   </div>
 
-  <!-- Modal de login simples -->
-  <div id="loginModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); align-items:center; justify-content:center;">
-    <div style="background:white; padding:2rem; border-radius:12px; width:90%; max-width:400px;">
-      <h2 style="margin-bottom:1rem;">Login do Vereador</h2>
+  <!-- Modal do Login -->
+  <div class="modal" id="modalLogin">
+    <div class="modal-box">
+      <h2 style="margin-bottom:1rem; color: var(--primary-navy);">Login do Vereador</h2>
       <form onsubmit="return login(event)">
-        <input type="text" id="usuario" placeholder="Usuário" required style="width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:8px;" />
-        <input type="password" id="senha" placeholder="Senha" required style="width:100%; padding:0.75rem; margin-bottom:1rem; border:1px solid #ccc; border-radius:8px;" />
-        <button type="submit" class="btn btn-primary" style="width:100%;">Entrar</button>
+        <input type="text" id="usuario" placeholder="Usuário" required>
+        <input type="password" id="senha" placeholder="Senha" required>
+        <button type="submit" class="btn btn-primary">Entrar</button>
       </form>
     </div>
   </div>
 
   <script src="auth.js"></script>
   <script>
-    function showLoginModal() {
-      document.getElementById('loginModal').style.display = 'flex';
+    function abrirModal() {
+      document.getElementById('modalLogin').classList.add('active');
     }
-
     function login(event) {
       event.preventDefault();
-      const usuario = document.getElementById("usuario").value;
-      const senha = document.getElementById("senha").value;
-
+      const usuario = document.getElementById('usuario').value;
+      const senha = document.getElementById('senha').value;
       if (usuario === "admin" && senha === "1234") {
         localStorage.setItem("logado", "true");
         window.location.href = "painel.html";
@@ -128,6 +170,16 @@
         alert("Usuário ou senha incorretos!");
       }
     }
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        document.getElementById('modalLogin').classList.remove('active');
+      }
+    });
+    document.getElementById('modalLogin').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('active');
+      }
+    });
   </script>
 </body>
 </html>
