@@ -3,153 +3,135 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gabinete Digital - Login</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Gabinete Digital Oficial</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    :root {
-      --primary-navy: #1D3557;
-      --primary-gold: #F4A300;
-      --text-secondary: #666;
-      --white: #fff;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
       font-family: 'Inter', sans-serif;
       background: linear-gradient(135deg, #0057B8 0%, #87CEEB 50%, #ffffff 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      padding: 1rem;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; padding: 1rem;
     }
     .container {
       background: #fff;
       padding: 2rem;
       border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      max-width: 400px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      max-width: 420px;
       width: 100%;
       text-align: center;
     }
-    .foto-vereador {
-      width: 100px;
-      height: 100px;
+    .logo { width: 60px; margin-bottom: 1rem; }
+    .foto-wrap {
+      display: inline-block;
+      padding: 6px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 4px solid var(--primary-gold);
+      background: linear-gradient(to bottom right, #F4A300, #FFD966);
       margin-bottom: 1rem;
     }
-    h1 {
-      color: var(--primary-navy);
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
+    .foto-wrap img {
+      width: 100px; height: 100px; border-radius: 50%;
+      display: block;
     }
-    p {
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
+    h1 { font-size: 1.4rem; color: #1D3557; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.2rem; color: #333; margin-bottom: 0.3rem; }
+    p.subtitle {
+      color: #666; font-size: 0.95rem; margin-bottom: 1.5rem;
     }
     .btn {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
+      font-size: 1rem;
+      font-weight: 600;
       border: none;
       border-radius: 8px;
-      font-weight: 600;
-      font-size: 1rem;
       cursor: pointer;
       transition: 0.3s;
     }
     .btn-primary {
-      background: var(--primary-navy);
-      color: white;
+      background: #1D3557; color: white;
     }
-    .btn-primary:hover {
-      background: #0f1d2e;
-    }
+    .btn-primary:hover { background: #0f1d2e; }
     .btn-secondary {
-      background: var(--primary-gold);
-      color: white;
+      background: #F4A300; color: white;
     }
-    .btn-secondary:hover {
-      background: #d18b00;
-    }
-    .btn-outline {
+    .btn-secondary:hover { background: #d18b00; }
+    .btn-link {
       background: transparent;
-      border: 2px solid var(--primary-navy);
-      color: var(--primary-navy);
+      color: #333;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
-    .btn-outline:hover {
-      background: var(--primary-navy);
-      color: white;
+    .btn-link:hover { text-decoration: underline; }
+    .footer {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #999;
     }
+    /* Modal */
     .modal {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.5); display:none;
+      align-items:center; justify-content:center;
+      z-index:10;
     }
-    .modal.active {
-      display: flex;
-    }
+    .modal.active { display:flex; }
     .modal-box {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      width: 90%;
-      max-width: 400px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      background:#fff; padding:2rem;
+      border-radius: 12px; width:90%; max-width:380px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      text-align: center;
     }
     .modal-box input {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
+      width:100%; padding:0.75rem; margin-bottom:1rem;
+      border:1px solid #ccc; border-radius:8px;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <img src="vereador.png" alt="Vereador" class="foto-vereador">
-    <h1>Gabinete Digital</h1>
-    <p>Escolha uma opção para continuar:</p>
+    <img src="logo.png" alt="Brasão" class="logo">
+    <div class="foto-wrap">
+      <img src="vereador.png" alt="Foto do Vereador">
+    </div>
+    <h1>Gabinete Digital Oficial</h1>
+    <h2>Emicleiton Rubem da Conceição</h2>
+    <p class="subtitle">Monte Santo – Bahia</p>
+    <p class="subtitle">"Transparência, Participação e Inovação no Legislativo."</p>
 
     <button class="btn btn-primary" onclick="abrirModal()">
-      <i class="fas fa-user-shield"></i> Acesso do Vereador
+      <i class="fas fa-user-shield"></i>&nbsp;Acesso do Vereador
     </button>
 
-    <a href="cadastro.html">
-      <button class="btn btn-secondary">
-        <i class="fas fa-users"></i> Portal do Cidadão
-      </button>
-    </a>
+    <button class="btn btn-secondary" onclick="window.location.href='cadastro.html'">
+      <i class="fas fa-users"></i>&nbsp;Portal do Cidadão
+    </button>
 
-    <a href="site.html">
-      <button class="btn btn-outline">
-        <i class="fas fa-globe"></i> Visitar o Site
-      </button>
-    </a>
+    <button class="btn btn-link" onclick="window.location.href='site.html'">
+      <i class="fas fa-globe"></i>&nbsp;Voltar ao Site Público
+    </button>
+
+    <div class="footer">
+      Ambiente seguro. Desenvolvido para o Gabinete Municipal.<br>
+      Precisa de ajuda? Fale com a equipe técnica.
+    </div>
   </div>
 
-  <!-- Modal do Login -->
+  <!-- Modal de Login -->
   <div class="modal" id="modalLogin">
     <div class="modal-box">
-      <h2 style="margin-bottom:1rem; color: var(--primary-navy);">Login do Vereador</h2>
+      <h2>Login do Vereador</h2>
       <form onsubmit="return login(event)">
-        <input type="text" id="usuario" placeholder="Usuário" required>
+        <input type="text" id="usuario" placeholder="E‑mail" required>
         <input type="password" id="senha" placeholder="Senha" required>
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Entrar no Sistema</button>
       </form>
     </div>
   </div>
@@ -161,24 +143,18 @@
     }
     function login(event) {
       event.preventDefault();
-      const usuario = document.getElementById('usuario').value;
-      const senha = document.getElementById('senha').value;
-      if (usuario === "admin" && senha === "1234") {
-        localStorage.setItem("logado", "true");
+      const u = document.getElementById('usuario').value;
+      const s = document.getElementById('senha').value;
+      if (u === "admin" && s === "1234") {
+        localStorage.setItem("logado","true");
         window.location.href = "painel.html";
-      } else {
-        alert("Usuário ou senha incorretos!");
-      }
+      } else alert("Login incorreto!");
     }
-    document.addEventListener("keydown", function(e) {
-      if (e.key === "Escape") {
-        document.getElementById('modalLogin').classList.remove('active');
-      }
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") document.getElementById('modalLogin').classList.remove('active');
     });
-    document.getElementById('modalLogin').addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.classList.remove('active');
-      }
+    document.getElementById('modalLogin').addEventListener('click', e => {
+      if (e.target === e.currentTarget) e.currentTarget.classList.remove('active');
     });
   </script>
 </body>
