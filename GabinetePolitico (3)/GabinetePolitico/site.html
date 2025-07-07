@@ -1581,6 +1581,60 @@
                                 Enviar Sugestão
                             </button>
                         </form>
+                        <script>
+document.querySelector("form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const fileInput = form.querySelector("input[type='file']");
+  const file = fileInput.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      salvarInteracao(reader.result); // envia com imagem base64
+    };
+    reader.readAsDataURL(file);
+  } else {
+    salvarInteracao(""); // sem imagem
+  }
+
+  function salvarInteracao(base64Image) {
+    const nome = form.querySelector("input[name='nome']").value;
+    const email = form.querySelector("input[name='email']").value;
+    const telefone = form.querySelector("input[name='telefone']").value;
+    const tipo = form.querySelector("select[name='tipo']").value;
+    const bairro = form.querySelector("input[name='bairro']").value;
+    const local = form.querySelector("input[name='local']").value;
+    const mensagem = form.querySelector("textarea[name='mensagem']").value;
+
+    const data = {
+      nome,
+      email,
+      telefone,
+      tipo,
+      bairro,
+      local,
+      mensagem,
+      imagem: base64Image,
+      protocolo: gerarProtocolo(),
+      dataHora: new Date().toLocaleString("pt-BR")
+    };
+
+    const interacoes = JSON.parse(localStorage.getItem("interacoes") || "[]");
+    interacoes.push(data);
+    localStorage.setItem("interacoes", JSON.stringify(interacoes));
+
+    alert("Sugestão enviada com sucesso!");
+    form.reset();
+  }
+
+  function gerarProtocolo() {
+    return "SGT" + Date.now();
+  }
+});
+</script>
+
                     </div>
 
                     <!-- Tab Assistente IA -->
