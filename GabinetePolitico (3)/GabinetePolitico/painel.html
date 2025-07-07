@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Painel do Vereador</title>
+  <title>Painel Administrativo</title>
+  <link rel="stylesheet" href="estilos.css">
 </head>
-<body>
+<body onload="protegerPagina()">
 
-  <!-- Proteção e scripts -->
   <script src="auth.js"></script>
-  <script>
-    protegerPagina(); // redireciona se não estiver logado
-  </script>
 
-  <h1>Painel Administrativo</h1>
-  <p>Bem-vindo ao painel do vereador.</p>
+  <header>
+    <h1>Painel do Vereador</h1>
+    <button onclick="logout()">Sair</button>
+  </header>
 
-  <button onclick="logout()">Sair</button>
+  <main>
+    <p>Bem-vindo ao sistema, vereador Emicleiton!</p>
+  </main>
 
 </body>
 </html>
