@@ -1725,33 +1725,33 @@ document.querySelector("#sugestoesForm").addEventListener("submit", function (e)
     enviarSugestaoComEmailJS("");
   }
 
-  function enviarSugestaoComEmailJS(imagem_base64) {
-    const nome = document.getElementById("nomeCompleto").value;
-    const email = document.getElementById("emailContato").value;
-    const telefone = document.getElementById("telefoneContato").value;
-    const tipo = document.getElementById("tipoSugestao").value;
-    const assunto = document.getElementById("assuntoSugestao").value;
-    const mensagem = document.getElementById("mensagemSugestao").value;
-    const bairro = document.getElementById("bairroSugestao").value;
-    const local = document.getElementById("localSugestao").value;
+ function enviarSugestaoComEmailJS(imagemBase64) {
+  const nome = document.getElementById("nomeCompleto").value;
+  const email = document.getElementById("emailContato").value;
+  const telefone = document.getElementById("telefoneContato").value;
+  const tipo = document.getElementById("tipoSugestao").value;
+  const assunto = document.getElementById("assuntoSugestao").value;
+  const mensagem = document.getElementById("mensagemSugestao").value;
+  const bairro = document.getElementById("bairroSugestao").value;
+  const local = document.getElementById("localSugestao").value;
 
-    emailjs.send("service_oaoj2xm", "template_i97tjf7", {
-      nome,
-      email,
-      telefone,
-      tipo,
-      assunto,
-      mensagem,
-      bairro,
-      local,
-      imagem_base64: imagemBase64
-    }).then(function () {
-      alert("✅ Sugestão enviada por e-mail com sucesso!");
-      form.reset();
-    }, function (error) {
-      alert("❌ Erro ao enviar: " + JSON.stringify(error));
-    });
-  }
+  emailjs.send("service_oaoj2xm", "template_i97tjf7", {
+  name: nome,
+  email: email,
+  message: mensagem,
+  title: assunto,
+    assunto,
+    mensagem,
+    bairro,
+    local,
+    imagem_base64: imagemBase64 // aqui estava o erro
+  }).then(function () {
+    alert("✅ Sugestão enviada por e-mail com sucesso!");
+    form.reset();
+  }, function (error) {
+    alert("❌ Erro ao enviar: " + JSON.stringify(error));
+  });
+}
 });
 </script>
         <!-- EmailJS Library - VERSÃO NOVA -->
