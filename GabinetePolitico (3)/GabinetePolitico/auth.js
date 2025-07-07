@@ -1,7 +1,5 @@
-// Função de login do vereador
 function login(event) {
-  event.preventDefault(); // evita recarregar a página
-
+  event.preventDefault();
   const usuario = document.getElementById("usuario").value;
   const senha = document.getElementById("senha").value;
 
@@ -13,7 +11,6 @@ function login(event) {
   }
 }
 
-// Protege páginas privadas (como o painel)
 function protegerPagina() {
   const logado = localStorage.getItem("logado");
   if (logado !== "true") {
@@ -21,8 +18,7 @@ function protegerPagina() {
   }
 }
 
-// Função de logout
 function logout() {
   localStorage.removeItem("logado");
-  window.location.href = "index.html"; // voltar para tela de login
+  window.location.href = "index.html";
 }
