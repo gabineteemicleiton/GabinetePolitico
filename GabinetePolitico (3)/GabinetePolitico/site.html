@@ -1718,5 +1718,53 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
         <script src="script.js"></script>
         <script src="assistente_fix.js"></script>
+        <script>
+document.querySelector("#sugestoesForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const form = this;
+  const fileInput = form.querySelector("input[type='file']");
+  const file = fileInput.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onloadend = function () {
+      enviarSugestaoComEmailJS(reader.result);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    enviarSugestaoComEmailJS("");
+  }
+
+  function enviarSugestaoComEmailJS(imagemBase64) {
+    const nome = document.getElementById("nomeCompleto").value;
+    const email = document.getElementById("emailContato").value;
+    const telefone = document.getElementById("telefoneContato").value;
+    const tipo = document.getElementById("tipoSugestao").value;
+    const assunto = document.getElementById("assuntoSugestao").value;
+    const mensagem = document.getElementById("mensagemSugestao").value;
+    const bairro = document.getElementById("bairroSugestao").value;
+    const local = document.getElementById("localSugestao").value;
+
+    emailjs.send("service_oaoj2xm", "template_i97tjf7", {
+      nome,
+      email,
+      telefone,
+      tipo,
+      assunto,
+      mensagem,
+      bairro,
+      local,
+      imagem_base64: imagemBase64
+    }).then(function () {
+      alert("✅ Sugestão enviada por e-mail com sucesso!");
+      form.reset();
+    }, function (error) {
+      alert("❌ Erro ao enviar: " + JSON.stringify(error));
+    });
+  }
+});
+</script>
+
     </body>
 </html>
