@@ -1670,12 +1670,15 @@
 </script>
     // Função para alternar visibilidade das seções
     function showSection(sectionId) {
-        const sections = document.querySelectorAll('.content-section');
-        sections.forEach(section => {
-            section.classList.remove('active');
-        });
-
-        const target = document.getElementById(sectionId);
+        const sections = document.querySelectorAll('.mobile-nav-button').forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault(); // <- necessário para celular
+    const section = button.getAttribute('data-section');
+    showSection(section); // Mostra a seção correta
+    toggleMobileMenu();   // Fecha o menu lateral no celular
+  });
+});
+     const target = document.getElementById(sectionId);
         if (target) {
             target.classList.add('active');
             target.scrollIntoView({ behavior: 'smooth' });
