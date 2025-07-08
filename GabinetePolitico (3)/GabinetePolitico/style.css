@@ -6546,5 +6546,71 @@ body.mobile-menu-open {
         font-size: 0.85rem;
     }
 }
+/* Correções manuais para espaçamento dos cartões e agenda */
+
+.projects-grid,
+.mandate-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card,
+.stat-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+}
+
+/* Ajustes visuais no calendário (agenda pública) */
+.calendar-container {
+  max-width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  width: 100%;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.calendar-day:hover {
+  background-color: #e0f2fe;
+}
+/* Correções adicionais para alinhamento de cartões e calendário */
+
+/* Grid dos cartões de projetos e estatísticas */
+.projects-grid,
+.mandate-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.project-card,
+.stat-card {
+  flex: 1 1 280px;
+  max-width: 320px;
+}
 
 
