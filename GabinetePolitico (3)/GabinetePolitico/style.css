@@ -7003,3 +7003,118 @@ section#agenda .calendar-grid > div {
   border-radius: 6px !important;
   text-align: center !important;
 }
+/* === Estilo para a Agenda Pública === */
+
+/* Container da agenda */
+.calendar-container {
+  margin: 2rem auto;
+  max-width: 700px;
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+}
+
+/* Cabeçalho da agenda */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-header button {
+  background-color: var(--primary-blue);
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.calendar-header h2 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+/* Dias da semana */
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+/* Grid de dias */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-day {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  text-align: center;
+  line-height: 2.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  color: var(--text-primary);
+  background-color: var(--light-gray);
+  transition: background-color 0.2s ease;
+}
+
+.calendar-day:hover {
+  background-color: var(--primary-yellow);
+  color: #000;
+  cursor: pointer;
+}
+
+/* Dia vazio (de meses anteriores ou posteriores) */
+.calendar-day.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+/* Dia com evento */
+.calendar-day.event {
+  background-color: var(--primary-blue);
+  color: white;
+  font-weight: bold;
+}
+
+/* Evento listado abaixo */
+.calendar-events {
+  margin-top: 2rem;
+}
+
+.calendar-event {
+  background-color: var(--white);
+  border-left: 4px solid var(--primary-blue);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.calendar-event strong {
+  color: var(--primary-blue);
+  font-size: 1rem;
+}
+
+.calendar-event p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .calendar-header h2 {
+    font-size: 1rem;
+  }
+}
