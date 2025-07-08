@@ -7066,3 +7066,10 @@ section#agenda .calendar-grid > div {
   color: #9ca3af;
 }
 
+/* Corrigir largura geral do site */
+.container,
+.content-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
