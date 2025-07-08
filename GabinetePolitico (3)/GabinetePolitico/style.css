@@ -6722,3 +6722,34 @@ body.mobile-menu-open {
   gap: 1rem !important;
 }
 
+/* Correção de layout dos grids e espaçamentos */
+.projects-grid,
+.mandate-stats {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  justify-items: center;
+}
+
+.project-card,
+.stat-card {
+  width: 100%;
+  max-width: 360px;
+}
+
+.contact-grid {
+  grid-template-columns: 2fr 1fr !important;
+  align-items: start;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.calendar-container {
+  margin-bottom: 3rem !important;
+}
+
+.calendar-grid {
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  gap: 1rem !important;
+}
+
