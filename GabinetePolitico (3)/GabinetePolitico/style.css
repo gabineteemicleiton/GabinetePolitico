@@ -6589,33 +6589,33 @@ body.mobile-menu-open {
   font-weight: bold;
   animation: pulse 2s infinite;
 }
-/* Correção da seção de contato */
-#contato .contact-grid {
+.contact-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
-  align-items: flex-start;
+  gap: 2rem;
   max-width: 100%;
+  margin: 0 auto;
   padding: 0 1rem;
   box-sizing: border-box;
 }
 
-#contato .form-container,
-#contato .contact-card {
-  width: 100%;
+.form-container,
+.contact-card {
+  flex: 1 1 300px;
   max-width: 500px;
+  width: 100%;
   box-sizing: border-box;
 }
 
-@media (min-width: 768px) {
-  #contato .contact-grid {
-    flex-wrap: nowrap;
+@media (min-width: 900px) {
+  .contact-grid {
     justify-content: space-between;
   }
 
-  #contato .form-container,
-  #contato .contact-card {
-    width: 48%;
+  .form-container,
+  .contact-card {
+    flex: 0 0 48%;
   }
 }
+
