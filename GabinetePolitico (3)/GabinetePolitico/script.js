@@ -292,7 +292,12 @@ function showSection(sectionId) {
         
         // Initialize section-specific features
         if (sectionId === 'agenda') {
-            updateCalendar();
+            
+    const agendaSection = document.getElementById('agenda');
+    if (agendaSection && agendaSection.classList.contains('active')) {
+        updateCalendar();
+    }
+    
         } else if (sectionId === 'cursos') {
             console.log('📚 Inicializando seção de cursos');
             initializeCursos();
@@ -337,37 +342,59 @@ function setupCalendar() {
 }
 
 function updateCalendar() {
-  const currentMonthElement = document.getElementById('currentMonth');
-  const calendarGrid = document.getElementById('calendarGrid');
-
-  calendarGrid.innerHTML = "";
-
-  const month = calendarCurrentDate.getMonth();
-  const year = calendarCurrentDate.getFullYear();
-
-  const firstDayOfMonth = new Date(year, month, 1);
-  const startDay = firstDayOfMonth.getDay();
-  const daysInMonth = new Date(year, month + 1, 0).getDate();
-  const prevMonthDays = new Date(year, month, 0).getDate();
-
-  // Dias do mês anterior (preenchimento)
-  for (let i = 0; i < startDay; i++) {
-    const emptyCell = document.createElement("div");
-    emptyCell.className = "calendar-day other-month";
-    emptyCell.textContent = prevMonthDays - startDay + i + 1;
-    calendarGrid.appendChild(emptyCell);
-  }
-
-  // Dias do mês atual
-  for (let day = 1; day <= daysInMonth; day++) {
-    const dayCell = document.createElement("div");
-    dayCell.className = "calendar-day";
-    dayCell.textContent = day;
-    calendarGrid.appendChild(dayCell);
-  }
-
-  const formatter = new Intl.DateTimeFormat('pt-BR', { month: 'long', year: 'numeric' });
-  currentMonthElement.textContent = formatter.format(calendarCurrentDate);
+    const calendarGrid = document.getElementById('calendarGrid');
+    const currentMonthElement = document.getElementById('currentMonth');
+    
+    if (!calendarGrid || !currentMonthElement) return;
+    
+    // Update month display
+    const monthNames = [
+        'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+        'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+    
+    currentMonthElement.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
+    
+    // Clear calendar
+    calendarGrid.innerHTML = '';
+    
+    // Add day headers
+    const dayHeaders = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    dayHeaders.forEach(day => {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day header';
+        dayElement.textContent = day;
+        calendarGrid.appendChild(dayElement);
+    });
+    
+    // Get first day of month and number of days
+    const firstDay = new Date(currentDate.getFullYear(), currentDate.getMonth(), 1);
+    const lastDay = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    const startingDayOfWeek = firstDay.getDay();
+    
+    // Add empty cells for previous month
+    for (let i = 0; i < startingDayOfWeek; i++) {
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'calendar-day other-month';
+        calendarGrid.appendChild(emptyDay);
+    }
+    
+    // Add days of current month
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+        
+        // Check if this date has an event
+        const dateString = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        if (eventDates[dateString]) {
+            dayElement.classList.add('has-event');
+            dayElement.title = eventDates[dateString];
+        }
+        
+        calendarGrid.appendChild(dayElement);
+    }
 }
 
 // Setup Animations and Interactions
@@ -764,7 +791,7 @@ function updateCalendar() {
         currentMonthElement.textContent = `${monthNames[calendarCurrentDate.getMonth()]} ${calendarCurrentDate.getFullYear()}`;
     }
     
-    const calendarDays = document.getElementById('calendarGrid');
+    const calendarDays = document.getElementById('calendarDays');
     if (!calendarDays) return;
     
     calendarDays.innerHTML = '';
