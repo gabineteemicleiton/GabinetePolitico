@@ -786,7 +786,7 @@ function updateCalendar() {
         currentMonthElement.textContent = `${monthNames[calendarCurrentDate.getMonth()]} ${calendarCurrentDate.getFullYear()}`;
     }
     
-    const calendarDays = document.getElementById('calendarGrid');
+    const calendarDays = document.getElementById('calendarDays');
     if (!calendarDays) return;
     
     calendarDays.innerHTML = '';
