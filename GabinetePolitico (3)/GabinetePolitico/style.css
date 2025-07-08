@@ -6787,3 +6787,14 @@ body.mobile-menu-open {
 .calendar-grid {
   display: grid !important;
 }
+/* Aplica estilo forçado ao primeiro bloco branco dentro da seção de agenda */
+section#agenda .white-box,
+section#agenda .calendar-container > div,
+section#agenda .calendar-container div:not(:has(*)):not(:empty) {
+  display: grid !important;
+  gap: 1rem !important;
+  padding: 1.5rem !important;
+  background-color: #fff !important;
+  border-radius: 12px !important;
+  justify-items: center;
+}
