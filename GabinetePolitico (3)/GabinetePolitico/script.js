@@ -292,12 +292,7 @@ function showSection(sectionId) {
         
         // Initialize section-specific features
         if (sectionId === 'agenda') {
-            
-const agendaEl = document.getElementById('agenda');
-if (agendaEl && (agendaEl.style.display !== "none" || agendaEl.classList.contains("active"))) {
-  updateCalendar();
-}
-
+            updateCalendar();
         } else if (sectionId === 'cursos') {
             console.log('📚 Inicializando seção de cursos');
             initializeCursos();
