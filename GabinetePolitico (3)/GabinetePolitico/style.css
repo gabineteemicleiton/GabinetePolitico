@@ -6819,3 +6819,24 @@ section#agenda .calendar-container > div:last-child > div {
   font-weight: 500;
   color: var(--text-primary);
 }
+/* Ajuste final para restaurar visibilidade dos dias */
+section#agenda .calendar-container > div:last-child > div {
+  min-height: 48px !important;
+  min-width: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1e293b;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Garante que círculos/pontos de eventos fiquem visíveis */
+section#agenda .calendar-container > div:last-child > div::before,
+section#agenda .calendar-container > div:last-child > div span {
+  display: inline-block !important;
+  position: relative;
+  z-index: 1;
+}
