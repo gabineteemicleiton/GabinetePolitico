@@ -6589,32 +6589,3 @@ body.mobile-menu-open {
   font-weight: bold;
   animation: pulse 2s infinite;
 }
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-.section-container,
-.content-section,
-.container {
-  max-width: 100%;
-  overflow-x: hidden;
-  box-sizing: border-box;
-}
-
-form, input, textarea, select, button {
-  box-sizing: border-box;
-}
-@media (max-width: 768px) {
-  .contact-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .contact-card {
-    margin: 0 auto;
-  }
-
-  .form-container {
-    width: 100%;
-  }
-}
