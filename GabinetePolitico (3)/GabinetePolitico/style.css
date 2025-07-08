@@ -6864,3 +6864,27 @@ section#agenda .calendar-container > div:last-child > div {
   color: #1e293b;
   border-radius: 6px;
 }
+/* Fecha a grade e organiza as células dos dias */
+section#agenda .calendar-container > div:last-child {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  grid-auto-rows: 60px;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+/* Ajusta os dias */
+section#agenda .calendar-container > div:last-child > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
