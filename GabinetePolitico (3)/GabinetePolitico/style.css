@@ -6840,3 +6840,27 @@ section#agenda .calendar-container > div:last-child > div span {
   position: relative;
   z-index: 1;
 }
+/* Define a grade correta (7 colunas) e melhora o layout dos dias */
+section#agenda .calendar-container > div:last-child {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem !important;
+  padding: 1.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  justify-items: center;
+  align-items: center;
+}
+
+/* Estilo para cada dia da agenda */
+section#agenda .calendar-container > div:last-child > div {
+  width: 100%;
+  min-height: 60px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 500;
+  font-size: 16px;
+  color: #1e293b;
+  border-radius: 6px;
+}
