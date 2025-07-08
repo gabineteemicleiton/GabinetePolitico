@@ -6546,5 +6546,30 @@ body.mobile-menu-open {
         font-size: 0.85rem;
     }
 }
+#calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 1rem;
+}
+
+.calendar-day {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.calendar-day.header {
+  font-weight: bold;
+  background-color: #f3f4f6;
+}
+
+.calendar-day.other-month {
+  background-color: transparent;
+  border: none;
+}
 
 
