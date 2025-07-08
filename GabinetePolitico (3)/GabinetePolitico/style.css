@@ -6546,25 +6546,36 @@ body.mobile-menu-open {
         font-size: 0.85rem;
     }
 }
-#calendarGrid {
+.calendar-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 4px;
   margin-top: 1rem;
 }
 
-.calendar-day {
-  padding: 10px;
-  background-color: white;
-  border: 1px solid #ddd;
-  text-align: center;
-  border-radius: 4px;
-  font-size: 14px;
+.calendar-weekdays {
+  display: contents;
 }
 
-.calendar-day.header {
+.weekday {
+  text-align: center;
   font-weight: bold;
-  background-color: #f3f4f6;
+  padding: 8px 0;
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.calendar-days {
+  display: contents;
+}
+
+.calendar-day {
+  padding: 10px;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 14px;
 }
 
 .calendar-day.other-month {
@@ -6572,4 +6583,9 @@ body.mobile-menu-open {
   border: none;
 }
 
-
+.calendar-day.has-event {
+  background-color: #1e40af;
+  color: white;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+}
