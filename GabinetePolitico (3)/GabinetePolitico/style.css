@@ -6612,5 +6612,52 @@ body.mobile-menu-open {
   flex: 1 1 280px;
   max-width: 320px;
 }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.contact-form,
+.contact-info {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.agenda-section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #f9fafb;
+}
+
+.calendar-container {
+  max-width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: #fff;
+  margin: 0 auto 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.calendar-grid {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
+}
 
 
