@@ -291,8 +291,11 @@ function showSection(sectionId) {
         history.pushState(null, null, `#${sectionId}`);
         
         // Initialize section-specific features
-        if (sectionId === 'agenda') {
-            updateCalendar();
+      if (sectionId === 'agenda') {
+    setTimeout(() => {
+        updateCalendar();
+    }, 100);
+}
         } else if (sectionId === 'cursos') {
             console.log('📚 Inicializando seção de cursos');
             initializeCursos();
