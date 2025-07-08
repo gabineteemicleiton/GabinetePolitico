@@ -6809,3 +6809,13 @@ section#agenda .calendar-container > div:last-child {
   justify-items: center;
   align-items: center;
 }
+/* Refina o layout dos dias do calendário */
+section#agenda .calendar-container > div:last-child > div {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
