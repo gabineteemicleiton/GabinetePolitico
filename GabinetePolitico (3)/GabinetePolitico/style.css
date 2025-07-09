@@ -6589,32 +6589,46 @@ body.mobile-menu-open {
   font-weight: bold;
   animation: pulse 2s infinite;
 }
+/* Correção definitiva da seção de contato */
 .contact-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  max-width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 1rem;
   box-sizing: border-box;
 }
 
-.form-container,
+.form-container {
+  flex: 1 1 600px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
 .contact-card {
   flex: 1 1 300px;
-  max-width: 500px;
-  width: 100%;
+  max-width: 350px;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
 }
 
-@media (min-width: 900px) {
+@media (max-width: 768px) {
   .contact-grid {
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
   }
 
   .form-container,
   .contact-card {
-    flex: 0 0 48%;
+    width: 100%;
+    max-width: 100%;
   }
 }
