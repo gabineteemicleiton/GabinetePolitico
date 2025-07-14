@@ -3007,11 +3007,13 @@ window.onload = function () {
     console.error("Erro ao carregar dados:", error);
   });
 };
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+// Importando Firebase do CDN (versão tag <script type="module"> já está no HTML)
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
+// Configurações do seu Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyA41d3h5ja2XzKFJPUhDefJp5Avq66wS8",
+  apiKey: "AIzaSyAe4136h5ja2XzKFJPUhDefJp5Avq66wS8",
   authDomain: "gabinetedigital-8fdf2.firebaseapp.com",
   projectId: "gabinetedigital-8fdf2",
   storageBucket: "gabinetedigital-8fdf2.appspot.com",
@@ -3021,9 +3023,11 @@ const firebaseConfig = {
   databaseURL: "https://gabinetedigital-8fdf2-default-rtdb.firebaseio.com"
 };
 
+// Inicializar Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
+// Função para salvar cabeçalho
 window.salvarCabecalho = function () {
   const titulo = document.getElementById("tituloSite").value;
   const subtitulo = document.getElementById("subtituloSite").value;
@@ -3034,9 +3038,9 @@ window.salvarCabecalho = function () {
     subtitulo,
     cidade
   }).then(() => {
-    alert("Cabeçalho salvo com sucesso!");
+    alert("✅ Cabeçalho salvo com sucesso!");
   }).catch((error) => {
-    console.error("Erro ao salvar cabeçalho:", error);
-    alert("Erro ao salvar cabeçalho.");
+    console.error("Erro ao salvar:", error);
+    alert("❌ Erro ao salvar cabeçalho.");
   });
 };
