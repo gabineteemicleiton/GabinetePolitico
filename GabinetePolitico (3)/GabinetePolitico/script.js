@@ -3007,3 +3007,36 @@ window.onload = function () {
     console.error("Erro ao carregar dados:", error);
   });
 };
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA41d3h5ja2XzKFJPUhDefJp5Avq66wS8",
+  authDomain: "gabinetedigital-8fdf2.firebaseapp.com",
+  projectId: "gabinetedigital-8fdf2",
+  storageBucket: "gabinetedigital-8fdf2.appspot.com",
+  messagingSenderId: "143306180518",
+  appId: "1:143306180518:web:1bc2fe32320fb2a16e007",
+  measurementId: "G-8V66B8ZT2K",
+  databaseURL: "https://gabinetedigital-8fdf2-default-rtdb.firebaseio.com"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+window.salvarCabecalho = function () {
+  const titulo = document.getElementById("tituloSite").value;
+  const subtitulo = document.getElementById("subtituloSite").value;
+  const cidade = document.getElementById("cidadeSite").value;
+
+  set(ref(db, "cabecalho"), {
+    titulo,
+    subtitulo,
+    cidade
+  }).then(() => {
+    alert("Cabeçalho salvo com sucesso!");
+  }).catch((error) => {
+    console.error("Erro ao salvar cabeçalho:", error);
+    alert("Erro ao salvar cabeçalho.");
+  });
+};
