@@ -2957,3 +2957,53 @@ function showNotificationIndex(message, type = 'success') {
         setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
+// CONFIGURAÇÃO FIREBASE
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyA41d36h5j2X2KFJPUhDEfpJ5Av696w58",
+  authDomain: "gabinetedigital-8fdf2.firebaseapp.com",
+  databaseURL: "https://gabinetedigital-8fdf2-default-rtdb.firebaseio.com",
+  projectId: "gabinetedigital-8fdf2",
+  storageBucket: "gabinetedigital-8fdf2.appspot.com",
+  messagingSenderId: "143306180518",
+  appId: "1:143306180518:web:1bcf3e23320fba216e007",
+  measurementId: "G-8V66B2KTKZ"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+
+// FUNÇÃO PARA SALVAR O CABEÇALHO
+function salvarCabecalho() {
+  const titulo = document.getElementById("tituloSite").value;
+  const subtitulo = document.getElementById("subtituloSite").value;
+  const cidade = document.getElementById("cidadeSite").value;
+
+  set(ref(db, "cabecalho"), {
+    titulo,
+    subtitulo,
+    cidade
+  }).then(() => {
+    alert("✅ Cabeçalho salvo com sucesso!");
+  }).catch((error) => {
+    alert("❌ Erro ao salvar: " + error);
+  });
+}
+import { get, child } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+// FUNÇÃO PARA CARREGAR O CABEÇALHO DO FIREBASE AO ABRIR O PAINEL
+window.onload = function () {
+  const dbRef = ref(db);
+  get(child(dbRef, "cabecalho")).then((snapshot) => {
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+      document.getElementById("tituloSite").value = data.titulo || "";
+      document.getElementById("subtituloSite").value = data.subtitulo || "";
+      document.getElementById("cidadeSite").value = data.cidade || "";
+    }
+  }).catch((error) => {
+    console.error("Erro ao carregar dados:", error);
+  });
+};
