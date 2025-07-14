@@ -9490,25 +9490,6 @@
                             ${noticia.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                         </div>
                     ` : ''}
-                    <!-- Firebase SDKs -->
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
-
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyA41d36h5j2X2KxFPUHdFeJp5Ay696wS8",
-    authDomain: "gabinetedigital-8fdf2.firebaseapp.com",
-    projectId: "gabinetedigital-8fdf2",
-    storageBucket: "gabinetedigital-8fdf2.appspot.com",
-    messagingSenderId: "143306180518",
-    appId: "1:143306180518:web:1bcf23e23320fba216e007",
-    measurementId: "G-6V6B6ET7KZ"
-  };
-
-  // Inicializar Firebase
-  const app = firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-</script>
 
                 </body>
                 </html>
@@ -13787,5 +13768,24 @@
     
     <!-- Scripts necessários para Georreferenciamento -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+       <!-- Firebase SDKs -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyA41d36h5j2X2KxFPUHdFeJp5Ay696wS8",
+    authDomain: "gabinetedigital-8fdf2.firebaseapp.com",
+    projectId: "gabinetedigital-8fdf2",
+    storageBucket: "gabinetedigital-8fdf2.appspot.com",
+    messagingSenderId: "143306180518",
+    appId: "1:143306180518:web:1bcf23e23320fba216e007",
+    measurementId: "G-6V6B6ET7KZ"
+  };
+
+  // Inicializar Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
 </body>
 </html>
